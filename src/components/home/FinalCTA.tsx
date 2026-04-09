@@ -1,22 +1,24 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MessageCircle, Calendar, ArrowRight } from "lucide-react";
+import { Calendar, ArrowRight } from "lucide-react";
+import WaIcon from "../ui/WaIcon";
 
-const WHATSAPP_LINK = "https://wa.me/5581999999999?text=Olá! Gostaria de avaliar meu caso.";
+const WHATSAPP_LINK =
+  "https://wa.me/5581999999999?text=Olá! Gostaria de avaliar meu caso.";
 
 export const FinalCTA = () => {
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-wine-gradient" />
-      
+
       {/* Gold accent line at top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gold-gradient" />
-      
+
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
-      
+
       {/* LA Watermark */}
       <div className="absolute right-10 top-1/2 -translate-y-1/2 opacity-5 text-accent font-serif text-[20rem] font-bold select-none pointer-events-none hidden lg:block">
         LA
@@ -33,14 +35,15 @@ export const FinalCTA = () => {
             Pronto para entender seu direito e o melhor caminho?
           </h2>
           <p className="text-lg text-primary-foreground/80 mb-10 max-w-2xl mx-auto">
-            Faça sua triagem agora e descubra como podemos ajudar você a conquistar 
-            o benefício que merece. Atendimento rápido e orientação clara.
+            Faça sua triagem agora e descubra como podemos ajudar você a
+            conquistar o benefício que merece. Atendimento rápido e orientação
+            clara.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="heroPrimary" size="xl" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
+                <WaIcon />
                 Avaliar meu caso no WhatsApp
                 <ArrowRight className="w-5 h-5" />
               </a>
@@ -52,7 +55,7 @@ export const FinalCTA = () => {
               </a>
             </Button>
           </div>
-          
+
           {/* Trust note */}
           <p className="mt-8 text-sm text-primary-foreground/60">
             Atendimento confidencial. Resposta em até 24h úteis.

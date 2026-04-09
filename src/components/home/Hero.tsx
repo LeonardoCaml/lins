@@ -1,8 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { Star, Shield, Users, MapPin, MessageCircle, Calendar } from "lucide-react";
+import {
+  Star,
+  Shield,
+  Users,
+  MapPin,
+  Calendar,
+} from "lucide-react";
+import WaIcon from "../ui/WaIcon";
 
-const WHATSAPP_LINK = "https://wa.me/5581999999999?text=Olá! Gostaria de avaliar meu caso.";
+const WHATSAPP_LINK =
+  "https://wa.me/5581999999999?text=Olá! Gostaria de avaliar meu caso.";
 
 export const Hero = () => {
   return (
@@ -13,10 +21,10 @@ export const Hero = () => {
         <div className="watermark-la -right-20 top-1/2 -translate-y-1/2">
           LA
         </div>
-        
+
         {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-wine-deep/50" />
-        
+
         {/* Gold accent lines */}
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
@@ -56,8 +64,8 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto mb-8 leading-relaxed"
           >
-            Mais de 15.000 clientes atendidos. Atuação em todo o Brasil. 
-            Triagem rápida e orientação objetiva para o seu caso.
+            Mais de 15.000 clientes atendidos. Atuação em todo o Brasil. Triagem
+            rápida e orientação objetiva para o seu caso.
           </motion.p>
 
           {/* CTAs */}
@@ -69,7 +77,7 @@ export const Hero = () => {
           >
             <Button variant="heroPrimary" size="xl" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-5 h-5" />
+                <WaIcon />
                 Avaliar meu caso no WhatsApp
               </a>
             </Button>
