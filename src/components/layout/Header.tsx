@@ -4,6 +4,7 @@ import { Menu, X, Phone, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
+import WaIcon from "../ui/WaIcon";
 
 const navLinks = [
   { name: "Início", path: "/" },
@@ -13,7 +14,8 @@ const navLinks = [
   { name: "Contato", path: "/contato" },
 ];
 
-const WHATSAPP_LINK = "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
+const WHATSAPP_LINK =
+  "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -44,7 +46,7 @@ export const Header = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Lins Advogados" className="h-12 w-auto" />
+            <img src={logo} alt="Lins Advogados" className="h-24 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -74,7 +76,7 @@ export const Header = () => {
             </Button>
             <Button variant="gold" size="sm" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4" />
+                <WaIcon />
                 WhatsApp
               </a>
             </Button>
@@ -122,8 +124,12 @@ export const Header = () => {
                   </a>
                 </Button>
                 <Button variant="gold" asChild>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-4 h-4" />
+                  <a
+                    href={WHATSAPP_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <WaIcon />
                     Falar no WhatsApp
                   </a>
                 </Button>

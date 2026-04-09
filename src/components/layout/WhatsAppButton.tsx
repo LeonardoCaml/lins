@@ -1,7 +1,8 @@
-import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import WaIcon from "../ui/WaIcon";
 
-const WHATSAPP_LINK = "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
+const WHATSAPP_LINK =
+  "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
 
 export const WhatsAppButton = () => {
   return (
@@ -16,9 +17,9 @@ export const WhatsAppButton = () => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
-      <MessageCircle className="w-5 h-5" />
+      <WaIcon />
       <span className="hidden sm:inline">Falar no WhatsApp</span>
-      
+
       {/* Pulse effect */}
       <span className="absolute inset-0 rounded-full bg-accent/30 animate-ping opacity-75" />
     </motion.a>
