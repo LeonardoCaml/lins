@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -9,55 +9,55 @@
     /* Premium Burgundy/Wine Theme */
     --background: 0 0% 100%;
     --foreground: 0 0% 10%;
-    
+
     /* Burgundy Deep - Main Brand */
     --primary: 352 52% 25%;
     --primary-foreground: 40 60% 95%;
-    
+
     /* Gold Accent */
     --accent: 42 85% 61%;
     --accent-foreground: 0 0% 10%;
-    
+
     /* Light Gold */
     --accent-light: 45 78% 77%;
-    
+
     /* Off-white warm */
     --secondary: 36 33% 95%;
     --secondary-foreground: 0 0% 10%;
-    
+
     /* Muted */
     --muted: 36 20% 92%;
     --muted-foreground: 0 0% 40%;
-    
+
     /* Card */
     --card: 0 0% 100%;
     --card-foreground: 0 0% 10%;
-    
+
     /* Popover */
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 10%;
-    
+
     /* Border */
     --border: 36 20% 88%;
     --input: 36 20% 88%;
     --ring: 42 85% 61%;
-    
+
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     --radius: 0.5rem;
-    
+
     /* Wine shades for gradients */
     --wine-deep: 352 52% 18%;
     --wine-medium: 352 52% 25%;
     --wine-light: 352 45% 35%;
-    
+
     /* Gold shades */
     --gold-dark: 40 70% 45%;
     --gold-medium: 42 85% 61%;
     --gold-light: 45 78% 77%;
-    
+
     /* Sidebar */
     --sidebar-background: 352 52% 20%;
     --sidebar-foreground: 40 60% 95%;
@@ -67,34 +67,38 @@
     --sidebar-accent-foreground: 40 60% 95%;
     --sidebar-border: 352 40% 30%;
     --sidebar-ring: 42 85% 61%;
+
+    /* Tipografia */
+    --font-headings: "Poppins", sans-serif;
+    --font-body: "Inter", sans-serif;
   }
 
   .dark {
     --background: 352 52% 8%;
     --foreground: 40 60% 95%;
-    
+
     --primary: 42 85% 61%;
     --primary-foreground: 352 52% 15%;
-    
+
     --accent: 42 85% 61%;
     --accent-foreground: 352 52% 15%;
-    
+
     --secondary: 352 40% 15%;
     --secondary-foreground: 40 60% 95%;
-    
+
     --muted: 352 35% 18%;
     --muted-foreground: 36 20% 70%;
-    
+
     --card: 352 50% 12%;
     --card-foreground: 40 60% 95%;
-    
+
     --popover: 352 50% 12%;
     --popover-foreground: 40 60% 95%;
-    
+
     --border: 352 35% 22%;
     --input: 352 35% 22%;
     --ring: 42 85% 61%;
-    
+
     --destructive: 0 62% 30%;
     --destructive-foreground: 40 60% 95%;
   }
@@ -104,133 +108,188 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
-  
+  /* --font-headings: "Plus Jakarta Sans", sans-serif;
+        --font-body: "Inter", sans-serif; */
+
   body {
     @apply bg-background text-foreground antialiased;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-body);
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-headings);
   }
 }
 
 @layer components {
   /* Wine Gradient Backgrounds */
   .bg-wine-gradient {
-    background: linear-gradient(135deg, hsl(352, 52%, 18%) 0%, hsl(352, 52%, 25%) 50%, hsl(352, 45%, 30%) 100%);
+    background: linear-gradient(180deg, #381216 0%, #611f27 50%, #381216 100%);
   }
-  
+
   .bg-wine-gradient-dark {
-    background: linear-gradient(180deg, hsl(352, 52%, 12%) 0%, hsl(352, 52%, 20%) 100%);
+    background: linear-gradient(
+      180deg,
+      hsl(352, 52%, 12%) 0%,
+      hsl(352, 52%, 20%) 100%
+    );
   }
-  
+
   .bg-wine-radial {
-    background: radial-gradient(ellipse at top, hsl(352, 52%, 28%) 0%, hsl(352, 52%, 18%) 70%);
+    background: radial-gradient(
+      ellipse at top,
+      hsl(352, 52%, 28%) 0%,
+      hsl(352, 52%, 18%) 70%
+    );
   }
-  
+
   /* Gold Gradient */
   .bg-gold-gradient {
-    background: linear-gradient(135deg, hsl(40, 70%, 45%) 0%, hsl(42, 85%, 61%) 50%, hsl(45, 78%, 77%) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(40, 70%, 45%) 0%,
+      #f0bd47 50%,
+      hsl(45, 78%, 77%) 100%
+    );
   }
-  
+
   .text-gold-gradient {
-    background: linear-gradient(135deg, hsl(40, 70%, 50%) 0%, hsl(42, 85%, 65%) 50%, hsl(45, 78%, 80%) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(40, 70%, 50%) 0%,
+      hsl(42, 85%, 65%) 50%,
+      hsl(45, 78%, 80%) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
-  
+
+  .bg-muted {
+    background: linear-gradient(
+      0deg,
+      rgb(255, 219, 219) 0%,
+      rgb(243, 236, 230) 87%
+    );
+  }
+
   /* Premium Button Styles */
   .btn-gold {
     @apply bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-md transition-all duration-300;
-    background: linear-gradient(135deg, hsl(40, 70%, 50%) 0%, hsl(42, 85%, 61%) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(40, 70%, 50%) 0%,
+      hsl(42, 85%, 61%) 100%
+    );
     box-shadow: 0 4px 20px hsla(42, 85%, 50%, 0.3);
   }
-  
+
   .btn-gold:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 25px hsla(42, 85%, 50%, 0.4);
   }
-  
+
   .btn-outline-gold {
     @apply border-2 border-accent text-accent font-semibold px-6 py-3 rounded-md transition-all duration-300 bg-transparent;
   }
-  
+
   .btn-outline-gold:hover {
     @apply bg-accent text-accent-foreground;
   }
-  
+
   /* Card Premium */
   .card-premium {
     @apply bg-card rounded-xl p-6 shadow-lg transition-all duration-300;
     border: 1px solid hsla(42, 85%, 61%, 0.1);
   }
-  
+
   .card-premium:hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px hsla(352, 52%, 20%, 0.15);
     border-color: hsla(42, 85%, 61%, 0.3);
   }
-  
+
   .card-wine {
     @apply rounded-xl p-6 transition-all duration-300;
-    background: linear-gradient(135deg, hsla(352, 52%, 22%, 0.95) 0%, hsla(352, 52%, 28%, 0.95) 100%);
+    background: linear-gradient(
+      135deg,
+      hsla(352, 52%, 22%, 0.95) 0%,
+      hsla(352, 52%, 28%, 0.95) 100%
+    );
     border: 1px solid hsla(42, 85%, 61%, 0.15);
   }
-  
+
   .card-wine:hover {
     border-color: hsla(42, 85%, 61%, 0.4);
   }
-  
+
   /* Section styling */
   .section-wine {
     @apply relative overflow-hidden;
-    background: linear-gradient(135deg, hsl(352, 52%, 18%) 0%, hsl(352, 52%, 22%) 100%);
+    background: linear-gradient(
+      135deg,
+      hsl(352, 52%, 18%) 0%,
+      hsl(352, 52%, 22%) 100%
+    );
   }
-  
+
   .section-cream {
     @apply bg-secondary;
   }
-  
+
   /* Decorative elements */
   .gold-line {
     @apply h-px w-full;
-    background: linear-gradient(90deg, transparent, hsl(42, 85%, 61%), transparent);
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(42, 85%, 61%),
+      transparent
+    );
   }
-  
+
   .gold-line-vertical {
     @apply w-px h-full;
-    background: linear-gradient(180deg, transparent, hsl(42, 85%, 61%), transparent);
+    background: linear-gradient(
+      180deg,
+      transparent,
+      hsl(42, 85%, 61%),
+      transparent
+    );
   }
-  
+
   /* LA Monogram watermark */
   .watermark-la {
     @apply absolute opacity-5 pointer-events-none select-none;
-    font-family: 'Playfair Display', serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 40vw;
     font-weight: 700;
     color: hsl(42, 85%, 61%);
     line-height: 1;
   }
-  
+
   /* Animations */
   .animate-fade-up {
     animation: fadeUp 0.6s ease-out forwards;
   }
-  
+
   .animate-fade-in {
     animation: fadeIn 0.5s ease-out forwards;
   }
-  
+
   .animate-slide-in-right {
     animation: slideInRight 0.5s ease-out forwards;
   }
-  
+
   .animate-scale-in {
     animation: scaleIn 0.4s ease-out forwards;
   }

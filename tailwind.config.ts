@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -14,8 +19,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        serif: ["Playfair Display", "Georgia", "serif"],
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)"],
+        heading: ["var(--font-headings)"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -117,12 +122,7 @@ export default {
         "pulse-gold": "pulse-gold 2s infinite",
         float: "float 3s ease-in-out infinite",
       },
-      backgroundImage: {
-        "wine-gradient": "linear-gradient(135deg, hsl(352, 52%, 18%) 0%, hsl(352, 52%, 25%) 50%, hsl(352, 45%, 30%) 100%)",
-        "gold-gradient": "linear-gradient(135deg, hsl(40, 70%, 45%) 0%, hsl(42, 85%, 61%) 50%, hsl(45, 78%, 77%) 100%)",
-        "wine-radial": "radial-gradient(ellipse at top, hsl(352, 52%, 28%) 0%, hsl(352, 52%, 18%) 70%)",
-      },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  // plugins: [require("tailwindcss-animate")],
 } satisfies Config;
