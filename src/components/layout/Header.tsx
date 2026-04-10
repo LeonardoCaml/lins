@@ -20,19 +20,29 @@ const WHATSAPP_LINK =
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      const scrolled = window.scrollY > 10;
+      setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev));
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+  }, [pathname]);
 
   return (
     <header
@@ -56,7 +66,7 @@ export const Header = () => {
                 key={link.path}
                 to={link.path}
                 className={`text-sm font-medium transition-colors duration-200 ${
-                  location.pathname === link.path
+                  pathname === link.path
                     ? "text-accent"
                     : "text-primary-foreground/90 hover:text-accent"
                 }`}
@@ -69,10 +79,10 @@ export const Header = () => {
           {/* Desktop CTAs */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="goldOutline" size="sm" asChild>
-              <a href="/contato">
+              <Link to="/contato">
                 <Phone className="w-4 h-4" />
                 Agendar
-              </a>
+              </Link>
             </Button>
             <Button variant="gold" size="sm" asChild>
               <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
@@ -100,6 +110,7 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
             className="lg:hidden bg-wine-deep/98 backdrop-blur-lg border-t border-accent/20"
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
@@ -108,7 +119,7 @@ export const Header = () => {
                   key={link.path}
                   to={link.path}
                   className={`text-base font-medium py-2 transition-colors ${
-                    location.pathname === link.path
+                    pathname === link.path
                       ? "text-accent"
                       : "text-primary-foreground/90"
                   }`}
@@ -117,11 +128,11 @@ export const Header = () => {
                 </Link>
               ))}
               <div className="flex flex-col gap-3 pt-4 border-t border-accent/20">
-                <Button variant="goldOutline" asChild>
-                  <a href="/contato">
+                <Button variant="goldOutline" size="sm" asChild>
+                  <Link to="/contato">
                     <Phone className="w-4 h-4" />
-                    Agendar Consulta
-                  </a>
+                    Agendar
+                  </Link>
                 </Button>
                 <Button variant="gold" asChild>
                   <a
