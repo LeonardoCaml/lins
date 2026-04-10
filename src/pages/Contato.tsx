@@ -3,19 +3,21 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Clock, 
-  Instagram, 
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Instagram,
   MessageCircle,
-  Send
+  Send,
 } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import WaIcon from "@/components/ui/WaIcon";
 
-const WHATSAPP_LINK = "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
+const WHATSAPP_LINK =
+  "https://wa.me/5581999279799?text=Olá! Gostaria de agendar uma consulta.";
 
 const Contato = () => {
   const { toast } = useToast();
@@ -31,15 +33,16 @@ const Contato = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     toast({
       title: "Mensagem enviada!",
-      description: "Recebemos seu contato. Nossa equipe vai te chamar em breve.",
+      description:
+        "Recebemos seu contato. Nossa equipe vai te chamar em breve.",
     });
-    
+
     setFormData({
       nome: "",
       whatsapp: "",
@@ -50,10 +53,12 @@ const Contato = () => {
     setIsSubmitting(false);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     }));
   };
 
@@ -68,12 +73,12 @@ const Contato = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">
               Entre em Contato
             </h1>
             <p className="text-lg text-primary-foreground/80">
-              Estamos prontos para ouvir você. Faça sua triagem agora 
-              e dê o primeiro passo para conquistar seus direitos.
+              Estamos prontos para ouvir você. Faça sua triagem agora e dê o
+              primeiro passo para conquistar seus direitos.
             </p>
           </motion.div>
         </div>
@@ -90,16 +95,20 @@ const Contato = () => {
               viewport={{ once: true }}
             >
               <div className="bg-card rounded-xl p-8 shadow-lg border border-border">
-                <h2 className="text-2xl font-serif font-bold text-foreground mb-2">
+                <h2 className="text-2xl font-heading font-bold text-foreground mb-2">
                   Solicite sua Triagem
                 </h2>
                 <p className="text-muted-foreground mb-6">
-                  Preencha o formulário e nossa equipe entrará em contato em até 24h úteis.
+                  Preencha o formulário e nossa equipe entrará em contato em até
+                  24h úteis.
                 </p>
 
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label htmlFor="nome" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="nome"
+                      className="block text-sm font-medium text-foreground mb-1"
+                    >
                       Nome completo *
                     </label>
                     <Input
@@ -114,7 +123,10 @@ const Contato = () => {
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label htmlFor="whatsapp" className="block text-sm font-medium text-foreground mb-1">
+                      <label
+                        htmlFor="whatsapp"
+                        className="block text-sm font-medium text-foreground mb-1"
+                      >
                         WhatsApp *
                       </label>
                       <Input
@@ -127,7 +139,10 @@ const Contato = () => {
                       />
                     </div>
                     <div>
-                      <label htmlFor="cidade" className="block text-sm font-medium text-foreground mb-1">
+                      <label
+                        htmlFor="cidade"
+                        className="block text-sm font-medium text-foreground mb-1"
+                      >
                         Cidade/UF *
                       </label>
                       <Input
@@ -142,7 +157,10 @@ const Contato = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="assunto" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="assunto"
+                      className="block text-sm font-medium text-foreground mb-1"
+                    >
                       Qual benefício/assunto? *
                     </label>
                     <Input
@@ -156,7 +174,10 @@ const Contato = () => {
                   </div>
 
                   <div>
-                    <label htmlFor="mensagem" className="block text-sm font-medium text-foreground mb-1">
+                    <label
+                      htmlFor="mensagem"
+                      className="block text-sm font-medium text-foreground mb-1"
+                    >
                       Conte-nos mais sobre seu caso
                     </label>
                     <Textarea
@@ -169,10 +190,10 @@ const Contato = () => {
                     />
                   </div>
 
-                  <Button 
-                    type="submit" 
-                    variant="gold" 
-                    size="lg" 
+                  <Button
+                    type="submit"
+                    variant="gold"
+                    size="lg"
                     className="w-full"
                     disabled={isSubmitting}
                   >
@@ -189,7 +210,10 @@ const Contato = () => {
 
                 <p className="text-xs text-muted-foreground mt-4 text-center">
                   Ao enviar, você concorda com nossa{" "}
-                  <a href="/privacidade" className="text-primary hover:underline">
+                  <a
+                    href="/privacidade"
+                    className="text-primary hover:underline"
+                  >
                     Política de Privacidade
                   </a>
                 </p>
@@ -203,36 +227,20 @@ const Contato = () => {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              {/* WhatsApp CTA */}
-              <div className="bg-primary rounded-xl p-8 text-center">
-                <MessageCircle className="w-12 h-12 text-accent mx-auto mb-4" />
-                <h3 className="text-xl font-serif font-bold text-primary-foreground mb-2">
-                  Prefere WhatsApp?
-                </h3>
-                <p className="text-primary-foreground/80 mb-4">
-                  Atendimento rápido e direto. Clique e fale conosco agora.
-                </p>
-                <Button variant="gold" size="lg" asChild>
-                  <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="w-5 h-5" />
-                    Falar no WhatsApp
-                  </a>
-                </Button>
-              </div>
-
               {/* Contact details */}
               <div className="bg-secondary rounded-xl p-8">
-                <h3 className="text-xl font-serif font-bold text-foreground mb-6">
+                <h3 className="text-xl font-heading font-bold text-foreground mb-6">
                   Informações de Contato
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-start gap-4">
                     <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-medium text-foreground">Endereço</p>
                       <p className="text-muted-foreground">
-                        Rua Bituri, 237<br />
+                        Rua Bituri, 237
+                        <br />
                         Recife - PE, 50090-320
                       </p>
                     </div>
@@ -242,11 +250,11 @@ const Contato = () => {
                     <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-medium text-foreground">Telefone</p>
-                      <a 
-                        href="tel:+5581999999999" 
+                      <a
+                        href="tel:+5581999279799"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        (81) 9 9999-9999
+                        (81) 9 9927-9799
                       </a>
                     </div>
                   </div>
@@ -255,11 +263,11 @@ const Contato = () => {
                     <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-medium text-foreground">E-mail</p>
-                      <a 
-                        href="mailto:contato@linsadvogados.com.br"
+                      <a
+                        href="mailto:Lucianalinseadvogados@gmail.com"
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
-                        contato@linsadvogados.com.br
+                        Lucianalinseadvogados@gmail.com
                       </a>
                     </div>
                   </div>
@@ -267,9 +275,11 @@ const Contato = () => {
                   <div className="flex items-start gap-4">
                     <Clock className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                     <div>
-                      <p className="font-medium text-foreground">Horário de Atendimento</p>
+                      <p className="font-medium text-foreground">
+                        Horário de Atendimento
+                      </p>
                       <p className="text-muted-foreground">
-                        Segunda a Sexta: 8h às 18h
+                        Segunda a Sexta: 8h às 17h
                       </p>
                     </div>
                   </div>
@@ -278,7 +288,7 @@ const Contato = () => {
                     <Instagram className="w-5 h-5 text-accent flex-shrink-0 mt-1" />
                     <div>
                       <p className="font-medium text-foreground">Instagram</p>
-                      <a 
+                      <a
                         href="https://instagram.com/linsadvogados_"
                         target="_blank"
                         rel="noopener noreferrer"
@@ -292,12 +302,15 @@ const Contato = () => {
               </div>
 
               {/* Map placeholder */}
-              <div className="bg-muted rounded-xl h-64 flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-12 h-12 text-muted-foreground/50 mx-auto mb-2" />
-                  <p className="text-muted-foreground">
-                    Rua Bituri, 237 - Recife/PE
-                  </p>
+
+              <div className="bg-muted rounded-xl overflow-hidden">
+                <div className="w-full aspect-[16/9]">
+                  <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d493.77795465525486!2d-34.893918720983926!3d-8.078659803429254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1f33d2415b77%3A0x52f872bed48b44c!2sLins%20Advogados%20-%20Escrit%C3%B3rio%20de%20Advocacia%20em%20Recife!5e0!3m2!1spt-BR!2sbr!4v1775761387270!5m2!1spt-BR!2sbr"
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  />
                 </div>
               </div>
             </motion.div>
