@@ -1,4 +1,6 @@
 import { Check } from "lucide-react";
+import benefits1 from "@/assets/benefits.jpg"
+import benefits2 from "@/assets/benefits_2.jpg"
 
 const benefits = [
   "Renda mensal garantida para você e sua família",
@@ -20,7 +22,7 @@ const BenefitsSection = () => {
               <span className="text-sm font-semibold text-accent uppercase tracking-widest">
                 Benefícios
               </span>
-              <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground">
+              <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground">
                 O que você ganha ao contar com a gente
               </h2>
               <ul className="space-y-4">
@@ -37,7 +39,7 @@ const BenefitsSection = () => {
 
             {/* Right: image placeholder */}
             <div className="bg-muted flex items-center justify-center min-h-[300px]">
-              <span className="text-muted-foreground/40 text-sm">Imagem</span>
+              <img src={benefits1} alt="" className="w-full h-full object-cover" />
             </div>
           </div>
         </div>

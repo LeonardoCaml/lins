@@ -1,51 +1,106 @@
 import { motion } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import TestimonialsCarousel from "../ui/TestimonialCarrousel";
 
 const testimonials = [
   {
-    name: "Maria Silva",
-    location: "São Paulo, SP",
-    text: "Concedido em tempo recorde! Achei que nunca conseguiria minha aposentadoria, mas a equipe da Lins Advogados conseguiu resolver tudo com muita competência.",
-    rating: 5,
-    service: "Aposentadoria por Tempo de Contribuição",
-  },
-  {
-    name: "João Carlos",
-    location: "Rio de Janeiro, RJ",
-    text: "Atendimento de primeira qualidade! Me senti seguro do início ao fim. Recomendo para todos que precisam de advogado previdenciário.",
-    rating: 5,
-    service: "Auxílio-Doença",
-  },
-  {
-    name: "Ana Beatriz",
+    name: "Eduardo Pedro",
     location: "Recife, PE",
-    text: "Excelentes profissionais! Resolve tudo: INSS, pensão, cível... Escritório com ótima localização e equipe muito atenciosa.",
+    text: "Contratei para a aposentadoria da minha genitora e foi concedido em tempo recorde. Recomendo pelos resultados.",
     rating: 5,
-    service: "BPC/LOAS",
+    service: "Aposentadoria",
+    date: "2 anos atrás",
   },
   {
-    name: "Pedro Santos",
-    location: "Salvador, BA",
-    text: "Êxito nos resultados! Conseguiram revisar minha aposentadoria e aumentar meu benefício. Profissionais sérios e dedicados.",
+    name: "Netbits",
+    location: "Recife, PE",
+    text: "Aqui você resolve tudo nas áreas Cível, Criminal, INSS, Pensão Alimentícia e mais.",
     rating: 5,
-    service: "Revisão de Aposentadoria",
+    service: "Atendimento Geral",
+    date: "2 anos atrás",
   },
   {
-    name: "Fernanda Costa",
-    location: "Fortaleza, CE",
-    text: "Atendimento humanizado e muito profissional. Me explicaram cada etapa do processo com paciência. Super recomendo!",
+    name: "Ana Cris",
+    location: "Recife, PE",
+    text: "Muito boa localização e boa recepção no atendimento.",
     rating: 5,
-    service: "Pensão por Morte",
+    service: "Atendimento Presencial",
+    date: "3 anos atrás",
   },
   {
-    name: "Roberto Lima",
-    location: "Belo Horizonte, MG",
-    text: "Mesmo morando em outro estado, o atendimento online foi excelente. Consegui meu benefício sem precisar ir a Recife.",
+    name: "Nildiane Santos",
+    location: "Recife, PE",
+    text: "Atendimento de primeira qualidade, ótima localização e excelentes profissionais. Recomendo.",
     rating: 5,
-    service: "Aposentadoria Especial",
+    service: "Atendimento Geral",
+    date: "6 anos atrás",
+  },
+  {
+    name: "Conceição Rocha",
+    location: "Recife, PE",
+    text: "Excelente localização com profissionais capacitados e de fácil acessibilidade.",
+    rating: 5,
+    service: "Atendimento Presencial",
+    date: "6 anos atrás",
+  },
+  {
+    name: "Marcelo Acioly",
+    location: "Recife, PE",
+    text: "Excelentes profissionais, excelente atendimento e de fácil localização. Recomendo.",
+    rating: 5,
+    service: "Atendimento Geral",
+    date: "6 anos atrás",
+  },
+  {
+    name: "Eduardo Amaral",
+    location: "Recife, PE",
+    text: "Fui a este lugar pela primeira vez.",
+    rating: 4,
+    service: "Atendimento Presencial",
+    date: "8 anos atrás",
+  },
+  {
+    name: "Wilson J Silva",
+    location: "Recife, PE",
+    text: "Muito bom.",
+    rating: 5,
+    service: "Atendimento Geral",
+    date: "4 anos atrás",
+  },
+  {
+    name: "Luiz Siqueira",
+    location: "Recife, PE",
+    text: "Ótimo atendimento.",
+    rating: 5,
+    service: "Atendimento Geral",
+    date: "3 anos atrás",
+  },
+  {
+    name: "Erika Alves",
+    location: "Recife, PE",
+    text: "Ótimo.",
+    rating: 5,
+    service: "Atendimento Geral",
+    date: "2 anos atrás",
+  },
+  {
+    name: "Robson Flor",
+    location: "Recife, PE",
+    text: "Boa.",
+    rating: 4,
+    service: "Atendimento Geral",
+    date: "1 ano atrás",
+  },
+  {
+    name: "Cleanderson Yuri",
+    location: "Recife, PE",
+    text: "Ótima.",
+    rating: 5,
+    service: "Atendimento Geral",
+    date: "3 anos atrás",
   },
 ];
 
@@ -53,7 +108,7 @@ export const Testimonials = () => {
   const [visibleCount, setVisibleCount] = useState(3);
 
   return (
-    <section className="py-20 bg-secondary">
+    <section id="depoimentos" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <motion.div
@@ -65,12 +120,12 @@ export const Testimonials = () => {
           <span className="text-accent font-medium text-sm uppercase tracking-wider">
             Avaliações Reais
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-4">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-3 mb-4">
             O que nossos clientes dizem
           </h2>
           <p className="text-muted-foreground">
-            Mais de 15.000 clientes atendidos em todo o Brasil. 
-            Confira alguns depoimentos de quem confiou no nosso trabalho.
+            Mais de 15.000 clientes atendidos em todo o Brasil. Confira alguns
+            depoimentos de quem confiou no nosso trabalho.
           </p>
         </motion.div>
 
@@ -79,7 +134,7 @@ export const Testimonials = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="flex justify-center mb-12"
+          className="flex justify-center"
         >
           <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2">
             <div className="flex -space-x-1">
@@ -94,7 +149,7 @@ export const Testimonials = () => {
         </motion.div>
 
         {/* Testimonials grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.slice(0, visibleCount).map((testimonial, index) => (
             <motion.div
               key={testimonial.name}
@@ -102,57 +157,46 @@ export const Testimonials = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-card rounded-xl p-6 shadow-lg border border-border hover:border-accent/30 transition-all duration-300 hover:-translate-y-1"
+              className="card-premium group cursor-pointer border-accent/20"
             >
-              {/* Quote icon */}
-              <Quote className="w-8 h-8 text-accent/30 mb-4" />
-              
-              {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                 ))}
               </div>
-              
-              {/* Text */}
+
               <p className="text-foreground mb-4 leading-relaxed">
                 "{testimonial.text}"
               </p>
-              
-              {/* Service tag */}
-              <span className="inline-block text-xs bg-primary/10 text-primary px-2 py-1 rounded mb-4">
+
+              <span className="inline-block text-xs bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
                 {testimonial.service}
               </span>
-              
-              {/* Author */}
+
               <div className="border-t border-border pt-4">
-                <p className="font-semibold text-foreground">{testimonial.name}</p>
-                <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+                <p className="font-semibold text-foreground">
+                  {testimonial.name}
+                </p>
+                <p className="text-sm text-muted-foreground">
+                  {testimonial.location}
+                </p>
               </div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
+
+        <TestimonialsCarousel />
 
         {/* Load more / CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mt-12 space-y-4"
+          className="text-center space-y-4"
         >
-          {visibleCount < testimonials.length && (
-            <Button
-              variant="outline"
-              onClick={() => setVisibleCount(testimonials.length)}
-            >
-              Ver mais depoimentos
-            </Button>
-          )}
           <div>
             <Button variant="wineOutline" size="lg" asChild>
-              <Link to="/depoimentos">
-                Ver Todos os Resultados
-              </Link>
+              <Link to="/depoimentos">Ver Todos os Resultados</Link>
             </Button>
           </div>
         </motion.div>

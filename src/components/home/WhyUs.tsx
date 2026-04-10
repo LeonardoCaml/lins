@@ -1,80 +1,127 @@
 import { motion } from "framer-motion";
-import { Award, Clock, Heart, Briefcase, MapPin, Headphones } from "lucide-react";
+import {
+  Award,
+  Clock,
+  Heart,
+  Briefcase,
+  MapPin,
+  Headphones,
+} from "lucide-react";
 
 const reasons = [
   {
     icon: Award,
     title: "Especialização Reconhecida",
-    description: "Foco em Direito Previdenciário com equipe dedicada e atualizada nas constantes mudanças da legislação do INSS.",
+    description:
+      "Foco em Direito Previdenciário com equipe dedicada e atualizada nas constantes mudanças da legislação do INSS.",
   },
   {
     icon: Clock,
     title: "Agilidade no Atendimento",
-    description: "Respostas rápidas e triagem eficiente. Seu tempo é valioso e nós respeitamos isso.",
+    description:
+      "Respostas rápidas e triagem eficiente. Seu tempo é valioso e nós respeitamos isso.",
   },
   {
     icon: Heart,
     title: "Atendimento Humanizado",
-    description: "Tratamos cada caso com empatia e atenção. Você não é só mais um processo para nós.",
+    description:
+      "Tratamos cada caso com empatia e atenção. Você não é só mais um processo para nós.",
   },
   {
     icon: Briefcase,
     title: "Profissionais Capacitados",
-    description: "Equipe com experiência comprovada e histórico de êxito em milhares de casos previdenciários.",
+    description:
+      "Equipe com experiência comprovada e histórico de êxito em milhares de casos previdenciários.",
   },
   {
     icon: MapPin,
     title: "Fácil Localização",
-    description: "Escritório bem localizado em Recife, com atendimento presencial e online para todo o Brasil.",
+    description:
+      "Escritório bem localizado em Recife, com atendimento presencial e online para todo o Brasil.",
   },
   {
     icon: Headphones,
     title: "Suporte Contínuo",
-    description: "Acompanhamento do início ao fim, com atualizações constantes sobre o andamento do seu processo.",
+    description:
+      "Acompanhamento do início ao fim, com atualizações constantes sobre o andamento do seu processo.",
+  },
+];
+
+const stats = [
+  { value: "15k+", label: "Clientes" },
+  { value: "26", label: "Estados" },
+  { value: "5★", label: "Avaliação" },
+];
+
+const floatAnimations = [
+  {
+    y: [0, -12, 0],
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" as const },
+  },
+  {
+    y: [0, -10, 0],
+    transition: {
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut" as const,
+      delay: 1.3,
+    },
+  },
+  {
+    y: [0, -14, 0],
+    transition: {
+      duration: 3.8,
+      repeat: Infinity,
+      ease: "easeInOut" as const,
+      delay: 2.6,
+    },
   },
 ];
 
 export const WhyUs = () => {
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
+    <section className="py-20 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
+          {/* Left column */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
           >
             <span className="text-accent font-medium text-sm uppercase tracking-wider">
               Nossa Diferença
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-foreground mt-3 mb-6">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-foreground mt-3 mb-6">
               Por que a Lins Advogados?
             </h2>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              Com mais de 15.000 clientes atendidos, construímos nossa reputação 
-              através de resultados sólidos, transparência e atendimento de primeira 
-              qualidade. Cada caso é tratado com a atenção que merece.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10 max-w-sm">
+              Com mais de 15.000 clientes atendidos, construímos nossa reputação
+              através de resultados sólidos, transparência e atendimento de
+              primeira qualidade.
             </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-4">
-              <div className="text-center p-4 bg-primary/5 rounded-lg">
-                <p className="text-3xl font-serif font-bold text-primary">15k+</p>
-                <p className="text-sm text-muted-foreground">Clientes</p>
-              </div>
-              <div className="text-center p-4 bg-primary/5 rounded-lg">
-                <p className="text-3xl font-serif font-bold text-primary">26</p>
-                <p className="text-sm text-muted-foreground">Estados</p>
-              </div>
-              <div className="text-center p-4 bg-primary/5 rounded-lg">
-                <p className="text-3xl font-serif font-bold text-primary">5★</p>
-                <p className="text-sm text-muted-foreground">Avaliação</p>
-              </div>
+
+            {/* Floating stat badges */}
+            <div className="flex items-end gap-4 h-24">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  animate={floatAnimations[i]}
+                  className="text-center px-5 py-3 rounded-2xl bg-primary/5 border border-primary/10"
+                >
+                  <p className="text-2xl font-heading font-bold text-primary leading-none">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">
+                    {stat.label}
+                  </p>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
 
-          {/* Right content - reasons grid */}
+          {/* Right column — reason cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {reasons.map((reason, index) => (
               <motion.div
@@ -82,12 +129,18 @@ export const WhyUs = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="p-5 rounded-lg bg-secondary hover:bg-primary/5 transition-colors group"
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="p-5 rounded-2xl bg-secondary hover:bg-primary/5 border border-transparent hover:border-primary/15 transition-all duration-300 group"
               >
-                <reason.icon className="w-8 h-8 text-primary mb-3 group-hover:text-accent transition-colors" />
-                <h3 className="font-semibold text-foreground mb-1">{reason.title}</h3>
-                <p className="text-sm text-muted-foreground">{reason.description}</p>
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/15 transition-colors">
+                  <reason.icon className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="font-heading font-semibold text-foreground text-sm mb-1 leading-snug">
+                  {reason.title}
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {reason.description}
+                </p>
               </motion.div>
             ))}
           </div>

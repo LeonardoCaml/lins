@@ -3,27 +3,56 @@ import { Phone, Clock, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
+import { Textarea } from "../ui/textarea";
 
 const ContactSection = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ nome: "", email: "", whatsapp: "" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    nome: "",
+    whatsapp: "",
+    cidade: "",
+    assunto: "",
+    mensagem: "",
+  });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
     toast({
       title: "Mensagem enviada!",
-      description: "Retornaremos em até 15 minutos.",
+      description:
+        "Recebemos seu contato. Nossa equipe vai te chamar em breve.",
     });
-    setForm({ nome: "", email: "", whatsapp: "" });
+
+    setFormData({
+      nome: "",
+      whatsapp: "",
+      cidade: "",
+      assunto: "",
+      mensagem: "",
+    });
+    setIsSubmitting(false);
+  };
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   return (
     <section
       id="contato"
-      className="py-20 section-wine relative overflow-hidden"
+      className="py-20 bg-wine-gradient relative overflow-hidden"
     >
-      <div className="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 left-10 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
       <div className="container-narrow container mx-auto px-4 py-20">
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Left */}
@@ -31,7 +60,7 @@ const ContactSection = () => {
             <span className="text-sm font-semibold text-accent uppercase tracking-widest">
               Contato
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground">
+            <h2 className="text-3xl md:text-4xl font-sans font-bold text-primary-foreground">
               Descubra se você tem{" "}
               <span className="text-accent">direito ao benefício</span>
             </h2>
@@ -42,7 +71,7 @@ const ContactSection = () => {
 
             <div className="space-y-4 pt-4">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center">
                   <Phone className="w-6 h-6 text-accent" />
                 </div>
                 <div>
@@ -55,7 +84,7 @@ const ContactSection = () => {
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center">
+                <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center">
                   <Clock className="w-6 h-6 text-accent" />
                 </div>
                 <div>
@@ -72,56 +101,117 @@ const ContactSection = () => {
 
           {/* Right: form */}
           <div className="bg-card rounded-2xl p-8 text-card-foreground">
-            <h3 className="text-xl font-serif font-bold mb-6">
-              Análise Gratuita do Benefício
+            <h3 className="text-xl font-sans font-bold mb-6">
+              Preencha o formulário com seu caso
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="text-sm font-medium text-muted-foreground mb-1 block">
-                  Nome completo
+                <label
+                  htmlFor="nome"
+                  className="block text-sm font-medium text-foreground mb-1"
+                >
+                  Nome completo *
                 </label>
                 <Input
-                  value={form.nome}
-                  onChange={(e) => setForm({ ...form, nome: e.target.value })}
+                  id="nome"
+                  name="nome"
+                  value={formData.nome}
+                  onChange={handleChange}
                   placeholder="Seu nome"
+                  className="bg-black/5"
                   required
                 />
               </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label
+                    htmlFor="whatsapp"
+                    className="block text-sm font-medium text-foreground mb-1"
+                  >
+                    WhatsApp *
+                  </label>
+                  <Input
+                    id="whatsapp"
+                    name="whatsapp"
+                    value={formData.whatsapp}
+                    onChange={handleChange}
+                    placeholder="(00) 00000-0000"
+                    required
+                    className="bg-black/5"
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="cidade"
+                    className="block text-sm font-medium text-foreground mb-1"
+                  >
+                    Cidade/UF *
+                  </label>
+                  <Input
+                    id="cidade"
+                    name="cidade"
+                    value={formData.cidade}
+                    onChange={handleChange}
+                    placeholder="Ex: Recife/PE"
+                    required
+                    className="bg-black/5"
+                  />
+                </div>
+              </div>
+
               <div>
-                <label className="text-sm font-medium text-muted-foreground mb-1 block">
-                  E-mail
+                <label
+                  htmlFor="assunto"
+                  className="block text-sm font-medium text-foreground mb-1"
+                >
+                  Qual benefício/assunto? *
                 </label>
                 <Input
-                  type="email"
-                  value={form.email}
-                  onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="seu@email.com"
+                  id="assunto"
+                  name="assunto"
+                  value={formData.assunto}
+                  onChange={handleChange}
+                  placeholder="Ex: Aposentadoria, BPC, Revisão..."
                   required
+                  className="bg-black/5"
                 />
               </div>
+
               <div>
-                <label className="text-sm font-medium text-muted-foreground mb-1 block">
-                  WhatsApp
+                <label
+                  htmlFor="mensagem"
+                  className="block text-sm font-medium text-foreground mb-1"
+                >
+                  Conte-nos mais sobre seu caso
                 </label>
-                <Input
-                  value={form.whatsapp}
-                  onChange={(e) =>
-                    setForm({ ...form, whatsapp: e.target.value })
-                  }
-                  placeholder="(00) 00000-0000"
-                  required
+                <Textarea
+                  id="mensagem"
+                  name="mensagem"
+                  value={formData.mensagem}
+                  onChange={handleChange}
+                  placeholder="Descreva brevemente sua situação..."
+                  rows={4}
+                  className="bg-black/5"
                 />
               </div>
+
               <Button
                 type="submit"
-                className="w-full bg-wine-gradient hover:bg-wine-light text-primary-foreground font-bold text-base py-6"
+                variant="gold"
+                size="lg"
+                className="w-full"
+                disabled={isSubmitting}
               >
-                <Send className="w-5 h-5 mr-2" />
-                Solicitar Análise Gratuita
+                {isSubmitting ? (
+                  "Enviando..."
+                ) : (
+                  <>
+                    <Send className="w-4 h-4" />
+                    Enviar Solicitação
+                  </>
+                )}
               </Button>
-              <p className="text-xs text-muted-foreground text-center">
-                Seus dados estão seguros. Não compartilhamos com terceiros.
-              </p>
             </form>
           </div>
         </div>

@@ -38,7 +38,7 @@ export const TrustBar = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="flex items-center gap-4"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                 <item.icon className="w-6 h-6 text-primary" />
               </div>
               <div>

@@ -1,22 +1,28 @@
 import { Award, Users, MapPin, Heart } from "lucide-react";
+import about from "@/assets/about-image.jpg";
+import { LightBlobs } from "../ui/LightBlobs";
+import { DarkBlobs } from "../ui/DarkBlobs";
 
 const AboutSection = () => {
   return (
     <section id="sobre" className="py-20 section-wine relative overflow-hidden">
-      <div className="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 left-10 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <LightBlobs />
+        <DarkBlobs />
+      </div>
+
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image placeholder */}
-          <div className="aspect-square mx-auto w-full rounded-2xl border-2 border-accent/20 bg-wine flex items-center justify-center">
-            <span className="text-primary-foreground/30 text-sm">Imagem</span>
+          <div className="aspect-square rounded-2xl border-2 border-accent/20 bg-wine w-full overflow-hidden">
+            <img src={about} alt="" className="w-full h-full object-cover" />
           </div>
 
           <div className="space-y-6">
             <span className="text-sm font-semibold text-accent uppercase tracking-widest">
               Sobre Nós
             </span>
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-foreground">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-primary-foreground">
               Mais que advogados: parceiros na sua{" "}
               <span className="text-accent">conquista</span>
             </h2>
@@ -39,7 +45,7 @@ const AboutSection = () => {
                 { icon: Heart, label: "Atendimento humanizado" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-accent/15 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center shrink-0">
                     <item.icon className="w-5 h-5 text-accent" />
                   </div>
                   <span className="text-sm text-primary-foreground/80">
