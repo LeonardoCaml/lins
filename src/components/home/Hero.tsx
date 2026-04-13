@@ -42,9 +42,9 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6"
             >
-              Previdenciário e INSS com{" "}
-              <span className="text-gold-gradient">estratégia, clareza</span> e
-              acompanhamento humano
+              Consultoria em Previdência Social com{" "}
+              <span className="text-gold-gradient">Foco no INSS</span> e
+              Atendimento Personalizado
             </motion.h1>
 
             {/* Subheadline */}

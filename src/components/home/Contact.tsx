@@ -1,220 +1,145 @@
-import { useState } from "react";
-import { Phone, Clock, Send } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useToast } from "@/hooks/use-toast";
-import { Textarea } from "../ui/textarea";
+import { DarkBlobs } from "../ui/DarkBlobs";
+import { LightBlobs } from "../ui/LightBlobs";
+
+type FormData = {
+  nome: string;
+  whatsapp: string;
+  cidade: string;
+  assunto: string;
+  mensagem: string;
+};
+
+const initialFormData: FormData = {
+  nome: "",
+  whatsapp: "",
+  cidade: "",
+  assunto: "",
+  mensagem: "",
+};
 
 const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [formData, setFormData] = useState({
-    nome: "",
-    whatsapp: "",
-    cidade: "",
-    assunto: "",
-    mensagem: "",
-  });
+  const [formData, setFormData] = useState<FormData>(initialFormData);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      // Simulação de envio
+      await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    toast({
-      title: "Mensagem enviada!",
-      description:
-        "Recebemos seu contato. Nossa equipe vai te chamar em breve.",
-    });
+      toast({
+        title: "Mensagem enviada!",
+        description:
+          "Recebemos seu contato. Nossa equipe vai te chamar em breve.",
+      });
 
-    setFormData({
-      nome: "",
-      whatsapp: "",
-      cidade: "",
-      assunto: "",
-      mensagem: "",
-    });
-    setIsSubmitting(false);
+      setFormData(initialFormData);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>,
   ) => {
+    const { name, value } = e.target;
+
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
   };
 
   return (
     <section
       id="contato"
-      className="py-20 bg-wine-gradient relative overflow-hidden"
+      className="relative overflow-hidden bg-wine-gradient py-16 sm:py-20 lg:py-28"
     >
-      <div className="container-narrow container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Left */}
-          <div className="space-y-6">
-            <span className="text-sm font-semibold text-accent uppercase tracking-widest">
-              Contato
-            </span>
-            <h2 className="text-3xl md:text-4xl font-sans font-bold text-primary-foreground">
-              Descubra se você tem{" "}
-              <span className="text-accent">direito ao benefício</span>
-            </h2>
-            <p className="text-primary-foreground/70">
-              Preencha o formulário ou entre em contato pelo WhatsApp.
-              Respondemos em até 15 minutos no horário comercial.
-            </p>
-
-            <div className="space-y-4 pt-4">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center">
-                  <Phone className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <p className="font-semibold text-primary-foreground">
-                    WhatsApp
-                  </p>
-                  <p className="text-primary-foreground/70 text-sm">
-                    (81) 99927-9799
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-accent/15 flex items-center justify-center">
-                  <Clock className="w-6 h-6 text-accent" />
-                </div>
-                <div>
-                  <p className="font-semibold text-primary-foreground">
-                    Horário de Atendimento
-                  </p>
-                  <p className="text-primary-foreground/70 text-sm">
-                    Seg–Sex, 08h–17h
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Right: form */}
-          <div className="bg-card rounded-2xl p-8 text-card-foreground">
-            <h3 className="text-xl font-sans font-bold mb-6">
-              Preencha o formulário com seu caso
-            </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="nome"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  Nome completo *
-                </label>
-                <Input
-                  id="nome"
-                  name="nome"
-                  value={formData.nome}
-                  onChange={handleChange}
-                  placeholder="Seu nome"
-                  className="bg-black/5"
-                  required
-                />
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label
-                    htmlFor="whatsapp"
-                    className="block text-sm font-medium text-foreground mb-1"
-                  >
-                    WhatsApp *
-                  </label>
-                  <Input
-                    id="whatsapp"
-                    name="whatsapp"
-                    value={formData.whatsapp}
-                    onChange={handleChange}
-                    placeholder="(00) 00000-0000"
-                    required
-                    className="bg-black/5"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="cidade"
-                    className="block text-sm font-medium text-foreground mb-1"
-                  >
-                    Cidade/UF *
-                  </label>
-                  <Input
-                    id="cidade"
-                    name="cidade"
-                    value={formData.cidade}
-                    onChange={handleChange}
-                    placeholder="Ex: Recife/PE"
-                    required
-                    className="bg-black/5"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="assunto"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  Qual benefício/assunto? *
-                </label>
-                <Input
-                  id="assunto"
-                  name="assunto"
-                  value={formData.assunto}
-                  onChange={handleChange}
-                  placeholder="Ex: Aposentadoria, BPC, Revisão..."
-                  required
-                  className="bg-black/5"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="mensagem"
-                  className="block text-sm font-medium text-foreground mb-1"
-                >
-                  Conte-nos mais sobre seu caso
-                </label>
-                <Textarea
-                  id="mensagem"
-                  name="mensagem"
-                  value={formData.mensagem}
-                  onChange={handleChange}
-                  placeholder="Descreva brevemente sua situação..."
-                  rows={4}
-                  className="bg-black/5"
-                />
-              </div>
-
-              <Button
-                type="submit"
-                variant="gold"
-                size="lg"
-                className="w-full"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  "Enviando..."
-                ) : (
-                  <>
-                    <Send className="w-4 h-4" />
-                    Enviar Solicitação
-                  </>
-                )}
-              </Button>
-            </form>
-          </div>
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <LightBlobs />
+        <DarkBlobs />
+      </div>
+      <div className="cta-box reveal">
+        <div className="section-label" style={{ justifyContent: "center" }}>
+          Próximo Passo
         </div>
+        <h2 className="text-3xl md:text-6xl font-sans font-bold text-primary-foreground">
+          Agende sua <span className="text-accent">consulta gratuita</span>{" "}
+          agora mesmo!
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-center text-sm leading-6 text-primary-foreground/80 sm:text-base lg:text-lg">
+          Fale com um especialista sem compromisso. Entendemos seu caso e
+          apresentamos o melhor caminho jurídico para proteger seus direitos.
+        </p>
+        <form
+          onSubmit={handleSubmit}
+          className="contact-form mt-8 grid grid-cols-1 gap-4 sm:gap-5"
+        >
+          <input
+            type="text"
+            name="nome"
+            placeholder="Seu nome completo"
+            value={formData.nome}
+            onChange={handleChange}
+            required
+          />
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+            <input
+              type="tel"
+              name="whatsapp"
+              placeholder="WhatsApp com DDD"
+              value={formData.whatsapp}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="text"
+              name="cidade"
+              placeholder="Ex: Recife/PE"
+              value={formData.cidade}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <select
+            name="assunto"
+            value={formData.assunto}
+            onChange={handleChange}
+            required
+          >
+            <option value="" disabled>
+              Área de interesse
+            </option>
+            <option value="Direito Empresarial">Direito Empresarial</option>
+            <option value="Direito Civil">Direito Civil</option>
+            <option value="Direito Tributário">Direito Tributário</option>
+            <option value="Direito do Trabalho">Direito do Trabalho</option>
+            <option value="Direito de Família">Direito de Família</option>
+            <option value="Direito Imobiliário">Direito Imobiliário</option>
+          </select>
+          <textarea
+            name="mensagem"
+            placeholder="Descreva brevemente sua situação..."
+            value={formData.mensagem}
+            onChange={handleChange}
+            rows={5}
+            required
+          />
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="btn-primary"
+            style={{ width: "100%", padding: "18px" }}
+          >
+            {isSubmitting ? "Enviando..." : "Quero Minha Consulta Gratuita →"}
+          </button>
+        </form>
+        <p className="form-note">✦ Sem spam. Retorno em até 2 horas úteis.</p>
       </div>
     </section>
   );
