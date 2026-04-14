@@ -153,13 +153,10 @@ const Sobre = () => {
               Nossa história
             </div>
 
-            <h1 className="mb-7 max-w-3xl text-3xl md:text-7xl font-heading text-foreground-muted">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
               Mais de 20 anos
               <br />
-              construindo{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e8c96a] to-[#c9a84c]">
-                legados
-              </span>
+              construindo <span className="text-gold-gradient">legados</span>
               <br />e protegendo direitos
             </h1>
 

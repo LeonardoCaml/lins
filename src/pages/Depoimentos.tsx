@@ -1,12 +1,9 @@
 import { Layout } from "@/components/layout/Layout";
-import { motion } from "framer-motion";
-import { Star, Quote, CheckCircle, MessageCircle } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import WaIcon from "@/components/ui/WaIcon";
+import "@/styles/testimonials.css";
 
 const WHATSAPP_LINK =
-  "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
+  "https://wa.me/5581999279799?text=Olá! Gostaria de avaliar meu caso.";
 
 const testimonials = [
   {
@@ -107,133 +104,194 @@ const testimonials = [
   },
 ];
 
-const stats = [
-  { value: "15.000+", label: "Clientes Atendidos" },
-  { value: "98%", label: "Satisfação" },
-  { value: "5★", label: "Avaliação Média" },
-  { value: "26", label: "Estados Atendidos" },
+const services = [
+  "Aposentadoria",
+  "Direito Civil",
+  "Direito Criminal",
+  "INSS",
+  "Pensão Alimentícia",
+  "Direito do Trabalho",
+  "Planejamento Patrimonial",
 ];
 
+const Stars = ({ rating }: { rating: number }) => (
+  <div className="flex gap-[2px]">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <span
+        key={i}
+        className={`text-[0.85rem] ${
+          i < rating ? "text-[var(--gold)]" : "text-[var(--muted)] opacity-30"
+        }`}
+      >
+        ★
+      </span>
+    ))}
+  </div>
+);
+
+const TestCard = ({ t }: any) => (
+  <div className="break-inside-avoid bg-[var(--glass)] border border-[var(--glass-border)] p-6 mb-5 inline-block w-full backdrop-blur-[6px] transition hover:-translate-y-1 hover:border-[rgba(201,168,76,0.25)]">
+    <div className="flex justify-between mb-4">
+      <Stars rating={t.rating} />
+      <span className="text-[0.65rem] uppercase tracking-[1.5px] text-[var(--gold-dim)] border border-[rgba(201,168,76,0.12)] px-2 py-[2px]">
+        {t.service}
+      </span>
+    </div>
+
+    <p className="italic text-[0.9rem] leading-[1.7] mb-5 text-[rgba(240,236,224,0.75)]">
+      {t.text}
+    </p>
+
+    <div className="flex items-center gap-3">
+      <div className="w-9 h-9 rounded-full flex items-center justify-center bg-[linear-gradient(135deg,var(--wine-medium),var(--wine-deep))] border border-[rgba(201,168,76,0.2)] text-[var(--gold)]">
+        {t.name.charAt(0)}
+      </div>
+
+      <div>
+        <div className="text-sm font-semibold">{t.name}</div>
+        <div className="text-xs text-[var(--muted)]">
+          {t.location} · {t.date}
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
 const Depoimentos = () => {
-  const [visibleCount, setVisibleCount] = useState(3);
   return (
     <Layout>
-      {/* Hero */}
-      <section className="pt-32 pb-16 section-wine relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-wine-deep to-wine-medium" />
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-3xl mx-auto text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-6">
-              Resultados & Depoimentos
-            </h1>
-            <p className="text-lg text-primary-foreground/80">
-              Histórias reais de clientes que confiaram em nosso trabalho e
-              conquistaram seus direitos.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <div className="relative overflow-x-hidden bg-wine-gradient text-[#f0ece0] font-sans">
+        <section className="relative overflow-hidden text-center flex items-center justify-center min-h-[52vh] pt-[120px] pb-[80px] px-[6%]">
+          <div className="hero-vignette"></div>
+          <div className="hero-arc arc1"></div>
+          <div className="hero-arc arc2"></div>
+          <div className="hero-arc arc3"></div>
 
-      {/* Trust badge */}
-      <section className="py-8 bg-background">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="flex justify-center"
-          >
-            <div className="inline-flex items-center gap-3 bg-primary/5 border border-primary/20 rounded-full px-6 py-3">
-              <div className="flex">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-accent text-accent" />
-                ))}
-              </div>
-              <div className="w-px h-6 bg-border" />
-              <div className="flex items-center gap-2">
-                <CheckCircle className="w-5 h-5 text-green-600" />
-                <span className="text-sm font-medium text-foreground">
-                  Avaliações Verificadas
+          <div className="hero-content reveal">
+            <div className="section-label">Prova Social</div>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
+              Resultados &<br />
+              <span className="text-gold-gradient">Depoimentos</span>
+            </h1>
+            <p className="hero-sub">
+              Histórias reais de clientes que confiaram em nosso trabalho
+              <br />e conquistaram seus direitos.
+            </p>
+            <div
+              className=" inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.18)] px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-md text-center
+"
+            >
+              <div className="flex gap-[2px] sm:gap-[3px]">
+                <span className="text-[0.85rem] sm:text-[1rem] text-[var(--gold)]">
+                  ★
                 </span>
+                <span className="text-[0.85rem] sm:text-[1rem] text-[var(--gold)]">
+                  ★
+                </span>
+                <span className="text-[0.85rem] sm:text-[1rem] text-[var(--gold)]">
+                  ★
+                </span>
+                <span className="text-[0.85rem] sm:text-[1rem] text-[var(--gold)]">
+                  ★
+                </span>
+                <span className="text-[0.85rem] sm:text-[1rem] text-[var(--gold)]">
+                  ★
+                </span>
+              </div>
+              <div className="hidden sm:block w-px h-[18px] sm:h-[22px] bg-[rgba(201,168,76,0.2)]" />
+              <div className="flex items-center gap-2 text-[0.7rem] sm:text-[0.78rem] text-[var(--muted2)] tracking-[0.5px] sm:tracking-[1px]">
+                <span className="w-[6px] h-[6px] sm:w-[8px] sm:h-[8px] bg-[#4caf50] rounded-full shadow-[0_0_6px_rgba(76,175,80,0.5)]" />
+                Avaliações verificadas
               </div>
             </div>
-          </motion.div>
+          </div>
+        </section>
+
+        <div id="stats">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stats-inner reveal">
+            <div className="stat-item reveal">
+              <div className="stat-n">12+</div>
+              <div className="stat-l">Avaliações 5 Estrelas</div>
+            </div>
+            <div className="stat-item reveal">
+              <div className="stat-n">4.9</div>
+              <div className="stat-l">Nota Média</div>
+            </div>
+            <div className="stat-item reveal">
+              <div className="stat-n">98%</div>
+              <div className="stat-l">Taxa de Êxito</div>
+            </div>
+            <div className="stat-item reveal">
+              <div className="stat-n">20+</div>
+              <div className="stat-l">Anos de Atuação</div>
+            </div>
+          </div>
         </div>
-      </section>
 
-      {/* Testimonials grid */}
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="card-premium group cursor-pointer border-accent/20"
-              >
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                  ))}
-                </div>
-
-                {/* Text */}
-                <p className="text-foreground mb-4 leading-relaxed">
-                  "{testimonial.text}"
-                </p>
-
-                {/* Service tag */}
-                <span className="inline-block text-xs bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-                  {testimonial.service}
-                </span>
-
-                {/* Author */}
-                <div className="border-t border-border pt-4">
-                  <p className="font-semibold text-foreground">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    {testimonial.location}
-                  </p>
-                </div>
-              </motion.div>
+        <div className="ticker">
+          <div className="flex gap-[48px] text-gold-gradient whitespace-nowrap animate-[tick_22s_linear_infinite]">
+            {[...services, ...services].map((s, i) => (
+              <span key={i}>
+                {s} <span>✦</span>
+              </span>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* CTA */}
-      <section className="py-16 section-wine">
-        <div className="container mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-6">
-              Faça parte das nossas histórias de sucesso
+        <section className="bg-[linear-gradient(var(--dark)_40%,#6d222c_100%)] px-[6%] py-20">
+          <div className="test-header reveal">
+            <div className="section-label">O que dizem sobre nós</div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
+              Vozes de quem
+              <br />
+              <span className="text-gold-gradient">
+                conquistou seus direitos
+              </span>
             </h2>
-            <p className="text-primary-foreground/80 mb-8 max-w-xl mx-auto">
-              Agende sua análise e descubra como podemos ajudar você a
-              conquistar seus direitos previdenciários.
+            <br />
+            <p>
+              Cada depoimento representa um caso real, uma vida transformada e
+              um direito garantido com comprometimento e estratégia.
             </p>
-            <Button variant="gold" size="lg" asChild>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+          </div>
+
+          <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
+            {testimonials.map((t, i) => (
+              <TestCard key={i} t={t} />
+            ))}
+          </div>
+        </section>
+
+        <section id="cta" className="py-16">
+          <div className="container cta-inner reveal">
+            <div className="section-label">Próximo passo</div>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
+              Faça parte das nossas
+              <br />
+              <span className="text-gold-gradient">histórias de sucesso</span>
+            </h2>
+            <p>
+              Agende sua análise de caso e descubra como podemos ajudar você a
+              conquistar seus direitos com estratégia e comprometimento.
+            </p>
+            <button type="submit" className="btn-primary text-sm">
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-2"
+              >
                 <WaIcon />
-                Avaliar meu Caso
+                Avaliar meu caso no WhatsApp
               </a>
-            </Button>
-          </motion.div>
-        </div>
-      </section>
+            </button>
+            <p className="cta-note">
+              ✦ Resposta em até 2 horas úteis &nbsp;·&nbsp; Atendimento
+              presencial ou online
+            </p>
+          </div>
+        </section>
+      </div>
     </Layout>
   );
 };

@@ -1,6 +1,5 @@
 import { Layout } from "@/components/layout/Layout";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import {
   Scale,
   FileText,
@@ -197,16 +196,20 @@ const AreasDeAtuacao = () => {
                   <p className="text-muted-foreground leading-relaxed mb-6">
                     {service.description}
                   </p>
-                  <Button variant={"gold"} asChild>
+                  <button
+                    type="submit"
+                    className="btn-primary"
+                  >
                     <a
                       href={WHATSAPP_LINK + service.title}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="flex gap-2 items-center"
                     >
                       <WaIcon />
                       Consultar sobre {service.title.split(" ")[0]}
                     </a>
-                  </Button>
+                  </button>
                 </div>
 
                 {/* Items list */}
@@ -233,7 +236,7 @@ const AreasDeAtuacao = () => {
 
       {/* CTA */}
       <section className="py-16 section-wine">
-        <div className="container mx-auto px-4 text-center">
+        <div className="container flex flex-col items-center px-4 text-center">
           <h2 className="text-2xl md:text-3xl font-heading font-bold text-primary-foreground mb-6">
             Não sabe qual área se aplica ao seu caso?
           </h2>
@@ -241,16 +244,21 @@ const AreasDeAtuacao = () => {
             Entre em contato para uma análise inicial. Nossa equipe vai orientar
             você sobre o melhor caminho para sua situação.
           </p>
-          <Button variant="gold" size="lg" asChild>
+          <button
+            type="submit"
+            className="btn-primary max-w-lg"
+            style={{ width: "100%", padding: "18px" }}
+          >
             <a
               href={WHATSAPP_LINK + "meu caso"}
               target="_blank"
               rel="noopener noreferrer"
+              className="flex gap-2"
             >
               <WaIcon />
               Falar com um Especialista
             </a>
-          </Button>
+          </button>
         </div>
       </section>
     </Layout>
