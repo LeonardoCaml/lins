@@ -33,7 +33,7 @@ export const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-lg font-heading text-accent mb-6">Navegação</h4>
-            <ul className="space-y-3">
+            <ul className="space-y-3 flex flex-col text-sm text-primary-foreground/80">
               {[
                 { name: "Início", path: "/" },
                 { name: "Áreas de Atuação", path: "/areas-de-atuacao" },
@@ -41,14 +41,13 @@ export const Footer = () => {
                 { name: "Depoimentos", path: "/depoimentos" },
                 { name: "Contato", path: "/contato" },
               ].map((link, index) => (
-                <li key={index}>
-                  <a
-                    className="text-primary-foreground/80 hover:text-accent transition-colors text-sm"
-                    href={link.path}
-                  >
-                    {link.name}
-                  </a>
-                </li>
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-sm font-medium transition-colors duration-200"
+                >
+                  {link.name}
+                </Link>
               ))}
             </ul>
           </div>
