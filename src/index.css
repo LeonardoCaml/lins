@@ -72,9 +72,10 @@
     --font-headings: "Poppins", sans-serif;
     --font-body: "Inter", sans-serif;
 
-    --gold: #c9a84c;
-    --gold-dim: #8a6b2a;
+    --gold: #f0bd47;
+    --gold-dim: #c38e22;
     --glass: rgba(255, 255, 255, 0.04);
+    --dark: #1a1a1a;
     --glass-border: rgba(201, 168, 76, 0.18);
     --text: #f0ece0;
     --muted: #8a8070;
@@ -152,30 +153,16 @@
   }
 
   .bg-wine-radial {
-    background: radial-gradient(
-      ellipse at top,
-      hsl(352, 52%, 28%) 0%,
-      hsl(352, 52%, 18%) 70%
-    );
+    background: radial-gradient(ellipse at top, #6d222c 0%, #46161c 70%);
   }
 
   /* Gold Gradient */
   .bg-gold-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(40, 70%, 45%) 0%,
-      #f0bd47 50%,
-      hsl(45, 78%, 77%) 100%
-    );
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 100%);
   }
 
   .text-gold-gradient {
-    background: linear-gradient(
-      135deg,
-      hsl(40, 70%, 50%) 0%,
-      hsl(42, 85%, 65%) 50%,
-      hsl(45, 78%, 80%) 100%
-    );
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -192,11 +179,7 @@
   /* Premium Button Styles */
   .btn-gold {
     @apply bg-accent text-accent-foreground font-semibold px-6 py-3 rounded-md transition-all duration-300;
-    background: linear-gradient(
-      135deg,
-      hsl(40, 70%, 50%) 0%,
-      hsl(42, 85%, 61%) 100%
-    );
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 100%);
     box-shadow: 0 4px 20px hsla(42, 85%, 50%, 0.3);
   }
 
@@ -256,32 +239,12 @@
   /* Decorative elements */
   .gold-line {
     @apply h-px w-full;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      hsl(42, 85%, 61%),
-      transparent
-    );
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 100%);
   }
 
   .gold-line-vertical {
     @apply w-px h-full;
-    background: linear-gradient(
-      180deg,
-      transparent,
-      hsl(42, 85%, 61%),
-      transparent
-    );
-  }
-
-  /* LA Monogram watermark */
-  .watermark-la {
-    @apply absolute opacity-5 pointer-events-none select-none;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 40vw;
-    font-weight: 700;
-    color: hsl(42, 85%, 61%);
-    line-height: 1;
+    background: linear-gradient(135deg, var(--gold-dim) 0%, var(--gold) 100%);
   }
 
   /* Animations */
@@ -469,38 +432,100 @@ h2 em {
   margin-top: 8px;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
-  color: var(--dark);
-  padding: 16px 36px;
-  font-size: 0.88rem;
+/* base mobile-first */
+.btn-primary,
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 14px 18px;
+
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  border: none;
+  font-family: "Inter", sans-serif;
+
   cursor: pointer;
   position: relative;
   overflow: hidden;
   transition: 0.3s;
-  font-family: "Inter", sans-serif;
 }
-.btn-primary::before {
+
+/* tablet */
+@media (max-width: 640px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 14px 16px;
+
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .btn-primary,
+  .btn-secondary {
+    padding: 16px 26px;
+    letter-spacing: 2px;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold-dim), var(--gold));
+  color: var(--dark);
+  border: none;
+}
+
+.btn-secondary {
+  color: var(--gold);
+  background: transparent;
+  border: 2px solid var(--gold);
+}
+
+.btn-primary::before,
+.btn-secondary::before {
   content: "";
   position: absolute;
   inset: 0;
+
   background: linear-gradient(
     135deg,
     transparent,
-    rgba(255, 255, 255, 0.2),
+    rgba(201, 168, 76, 0.2),
     transparent
   );
+
   transform: translateX(-100%);
   transition: 0.5s;
 }
-.btn-primary:hover::before {
+
+.btn-primary:hover::before,
+.btn-secondary:hover::before {
   transform: translateX(100%);
 }
-.btn-primary:hover {
+
+.btn-primary:hover,
+.btn-secondary:hover {
   transform: translateY(-2px);
+}
+
+.btn-primary:hover {
   box-shadow: 0 12px 40px rgba(201, 168, 76, 0.35);
 }
+
+.btn-secondary:hover {
+  box-shadow: 0 12px 40px rgba(201, 168, 76, 0.25);
+  background: rgba(201, 168, 76, 0.05);
+}
+
+/* __________________________
+
+    seção de depoimentos 
+   __________________________*/
