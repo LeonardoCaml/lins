@@ -9,7 +9,6 @@ import {
   Gavel,
   Building,
   Shield,
-  MessageCircle,
   CheckCircle,
 } from "lucide-react";
 import WaIcon from "@/components/ui/WaIcon";

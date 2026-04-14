@@ -4,7 +4,6 @@ import { TrustBar } from "@/components/home/TrustBar";
 import { Services } from "@/components/home/Services";
 import { HowItWorks } from "@/components/home/HowItWorks";
 import { Testimonials } from "@/components/home/Testimonials";
-import { WhyUs } from "@/components/home/WhyUs";
 import { FAQ } from "@/components/home/FAQ";
 import { FinalCTA } from "@/components/home/FinalCTA";
 import ProblemSection from "@/components/home/ProblemSection";
@@ -24,7 +23,6 @@ const Index = () => {
       <Testimonials />
       <AboutSection />
       <BenefitsSection />
-      <WhyUs />
       <FAQ />
       <FinalCTA />
     </Layout>
