@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 const WHATSAPP_LINK =
-  "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
+  "https://wa.me/5581999279799?text=Olá! Gostaria de agendar uma consulta.";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
