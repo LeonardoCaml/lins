@@ -461,7 +461,7 @@ h2 em {
 }
 .contact-form select option {
   background: var(--dark3);
-  color: var(--text);
+  color: var(--gold-dim);
 }
 .form-note {
   color: var(--muted);
