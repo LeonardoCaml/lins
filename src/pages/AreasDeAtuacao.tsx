@@ -1,4 +1,3 @@
-import { Layout } from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import {
   Scale,
@@ -140,7 +139,7 @@ const services = [
 
 const AreasDeAtuacao = () => {
   return (
-    <Layout>
+    <>
       {/* Hero */}
       <div id="areas-de-atuacao">
         <section className="pt-32 pb-16 section-wine relative overflow-hidden">
@@ -257,7 +256,7 @@ const AreasDeAtuacao = () => {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 

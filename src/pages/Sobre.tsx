@@ -1,5 +1,3 @@
-import { Layout } from "@/components/layout/Layout";
-
 import about from "@/assets/about-image.jpg";
 
 const stats = [
@@ -101,32 +99,9 @@ const trustCards = [
   },
 ];
 
-// const recognitions = [
-//   {
-//     icon: "🏆",
-//     title: "Análise Advocacia 500",
-//     text: "Reconhecimento como referência regional no Norte — 2018, 2021 e 2023",
-//   },
-//   {
-//     icon: "⭐",
-//     title: "5 Estrelas Google",
-//     text: "Mais de 280 avaliações verificadas com nota máxima pelos clientes",
-//   },
-//   {
-//     icon: "🎓",
-//     title: "FGV & USP",
-//     text: "Equipe com pós-graduação nas melhores instituições jurídicas do Brasil",
-//   },
-//   {
-//     icon: "🤝",
-//     title: "CNJ Certificado",
-//     text: "Mediação e resolução alternativa de conflitos com certificação federal",
-//   },
-// ];
-
 const Sobre = () => {
   return (
-    <Layout>
+    <>
       <section
         id="sobre"
         className="relative overflow-x-hidden bg-wine-gradient text-[#f0ece0] font-sans"
@@ -477,7 +452,7 @@ const Sobre = () => {
           </div>
         </section>
       </section>
-    </Layout>
+    </>
   );
 };
 

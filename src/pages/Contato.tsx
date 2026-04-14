@@ -1,4 +1,3 @@
-import { Layout } from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { useState, type ChangeEvent, type FormEvent } from "react";
@@ -57,7 +56,7 @@ const Contato = () => {
   };
 
   return (
-    <Layout>
+    <>
       <div
         id="contato"
         className="pt-32 pb-16 bg-wine-deep relative overflow-hidden"
@@ -249,7 +248,7 @@ const Contato = () => {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 

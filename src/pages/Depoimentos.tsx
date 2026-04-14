@@ -1,4 +1,3 @@
-import { Layout } from "@/components/layout/Layout";
 import WaIcon from "@/components/ui/WaIcon";
 import "@/styles/testimonials.css";
 
@@ -159,7 +158,7 @@ const TestCard = ({ t }: any) => (
 
 const Depoimentos = () => {
   return (
-    <Layout>
+    <>
       <div
         id="depoimentos"
         className="relative overflow-x-hidden bg-wine-gradient text-[#f0ece0] font-sans"
@@ -292,7 +291,7 @@ const Depoimentos = () => {
           </div>
         </section>
       </div>
-    </Layout>
+    </>
   );
 };
 

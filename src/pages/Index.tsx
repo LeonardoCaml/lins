@@ -1,4 +1,3 @@
-import { Layout } from "@/components/layout/Layout";
 import { Hero } from "@/components/home/Hero";
 import { TrustBar } from "@/components/home/TrustBar";
 import { Services } from "@/components/home/Services";
@@ -13,7 +12,7 @@ import ContactSection from "@/components/home/Contact";
 
 const Index = () => {
   return (
-    <Layout>
+    <>
       <Hero />
       <TrustBar />
       <ProblemSection />
@@ -25,7 +24,7 @@ const Index = () => {
       <BenefitsSection />
       <FAQ />
       <FinalCTA />
-    </Layout>
+    </>
   );
 };
 

@@ -1,9 +1,8 @@
-import { Layout } from "@/components/layout/Layout";
 import { motion } from "framer-motion";
 
 const Privacidade = () => {
   return (
-    <Layout>
+    <>
       {/* Hero */}
       <section className="pt-32 pb-12 section-wine relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-wine-deep to-wine-medium" />
@@ -128,7 +127,7 @@ const Privacidade = () => {
           </motion.div>
         </div>
       </section>
-    </Layout>
+    </>
   );
 };
 
