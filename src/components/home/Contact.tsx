@@ -115,12 +115,14 @@ const ContactSection = () => {
             <option value="" disabled>
               Área de interesse
             </option>
-            <option value="Direito Empresarial">Direito Empresarial</option>
-            <option value="Direito Civil">Direito Civil</option>
-            <option value="Direito Tributário">Direito Tributário</option>
-            <option value="Direito do Trabalho">Direito do Trabalho</option>
-            <option value="Direito de Família">Direito de Família</option>
-            <option value="Direito Imobiliário">Direito Imobiliário</option>
+            <option value="Planejamento Previdenciário">Planejamento Previdenciário</option>
+            <option value="Concessão de Benefícios">Concessão de Benefícios</option>
+            <option value="Revisão de Benefícios">Revisão de Benefícios</option>
+            <option value="BPC/LOAS">BPC/LOAS</option>
+            <option value="Ação Judicial e Administrativa">Ação Judicial e Administrativa</option>
+            <option value="Regularização de Tempo de Contribuição">Regularização de Tempo de Contribuição</option>
+            <option value="Consultoria Previdenciária">Consultoria Previdenciária</option>
+            <option value="Outros">Outros...</option>
           </select>
           <textarea
             name="mensagem"

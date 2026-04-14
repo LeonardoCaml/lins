@@ -6,7 +6,7 @@ import { LightBlobs } from "../ui/LightBlobs";
 import { DarkBlobs } from "../ui/DarkBlobs";
 
 const WHATSAPP_LINK =
-  "https://wa.me/5581999999999?text=Olá! Gostaria de avaliar meu caso.";
+  "https://wa.me/5581999279799?text=Olá! Gostaria de avaliar meu caso.";
 
 export const FinalCTA = () => {
   return (

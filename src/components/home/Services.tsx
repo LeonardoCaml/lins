@@ -16,28 +16,28 @@ const services = [
     icon: Scale,
     title: "Aposentadorias INSS",
     description:
-      "Idade, tempo de contribuição, especial. Análise completa do seu caso para encontrar o melhor caminho.",
+      "Análise completa do seu histórico contributivo para identificar a melhor modalidade de aposentadoria.",
     highlight: true,
   },
   {
     icon: FileText,
     title: "Revisões Previdenciárias",
     description:
-      "Verificamos se sua aposentadoria foi calculada corretamente e buscamos o reajuste devido.",
+      "Verificamos se seu benefício foi calculado corretamente e buscamos valores maiores quando possível.",
     highlight: true,
   },
   {
     icon: Heart,
-    title: "Auxílio-Doença",
+    title: "Auxílio por Incapacidade",
     description:
-      "Orientação para afastamento por incapacidade, com organização correta da documentação médica.",
+      "Orientação para afastamento por problemas de saúde com suporte em documentação e perícias médicas.",
     highlight: true,
   },
   {
     icon: Users,
     title: "BPC/LOAS",
     description:
-      "Benefício para idosos e pessoas com deficiência. Verificamos os requisitos do seu caso.",
+      "Análise de elegibilidade para benefício assistencial destinado a idosos e pessoas com deficiência.",
     highlight: true,
   },
   {
@@ -49,23 +49,23 @@ const services = [
   },
   {
     icon: Gavel,
-    title: "Pensão Alimentícia",
+    title: "Direito de Família",
     description:
-      "Ações de alimentos, revisão e execução. Proteção dos direitos familiares.",
+      "Atuação em pensão alimentícia, guarda e outras demandas familiares com foco em proteção jurídica.",
     highlight: false,
   },
   {
     icon: Building,
     title: "Direito Cível",
     description:
-      "Contratos, indenizações e demais questões cíveis com atendimento personalizado.",
+      "Contratos, indenizações e demandas cíveis com estratégia personalizada para cada caso.",
     highlight: false,
   },
   {
     icon: Scale,
     title: "Direito Administrativo",
     description:
-      "Concursos, servidores públicos e questões contra a administração.",
+      "Atuação em concursos, direitos de servidores e processos contra a administração pública.",
     highlight: false,
   },
 ];
