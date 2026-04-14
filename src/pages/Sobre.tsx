@@ -127,7 +127,10 @@ const trustCards = [
 const Sobre = () => {
   return (
     <Layout>
-      <section className="relative overflow-x-hidden bg-wine-gradient text-[#f0ece0] font-sans">
+      <section
+        id="sobre"
+        className="relative overflow-x-hidden bg-wine-gradient text-[#f0ece0] font-sans"
+      >
         <div className="pointer-events-none fixed inset-0 z-0 opacity-40">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,168,76,0.06),transparent_45%),linear-gradient(180deg,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[length:auto,100%_24px]" />
           <div
@@ -438,67 +441,6 @@ const Sobre = () => {
             ))}
           </div>
         </section>
-
-        {/* <section
-          id="recognitions"
-          className="relative z-10 bg-wine px-6 py-24 sm:px-8 lg:px-[6%] lg:py-28"
-        >
-          <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
-            <div className="reveal-left">
-              <div className="mb-4 flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
-                <span className="h-px w-7 bg-[#c9a84c]" />
-                Credibilidade
-              </div>
-              <h2 className="mb-4 text-[clamp(1.9rem,3.5vw,2.8rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
-                Reconhecimentos &
-                <br />
-                <span className="text-[#c9a84c]">Certificações</span>
-              </h2>
-              <p className="mt-4 text-[0.95rem] font-light leading-[1.75] text-[#a09880]">
-                Nossa reputação é construída por quem mais importa: clientes
-                satisfeitos, pares da advocacia e instituições que reconhecem a
-                excelência do nosso trabalho.
-              </p>
-
-              <div className="mt-8 flex flex-col gap-4">
-                {[
-                  "Membro ativo da OAB/PA — com participação em comissões de Direito Empresarial e Tributário.",
-                  "Certificado pelo CNJ em mediação e métodos alternativos de resolução de conflitos.",
-                  "Parceiro de câmaras de arbitragem em São Paulo, Brasília e Belém para litígios de alta complexidade.",
-                  "Avaliação 5 estrelas no Google com mais de 280 avaliações verificadas de clientes reais.",
-                ].map((text) => (
-                  <div key={text} className="flex items-start gap-4">
-                    <span className="mt-1 text-[0.7rem] text-[#c9a84c]">✦</span>
-                    <p className="text-[0.9rem] leading-[1.6] text-[#a09880]">
-                      <strong className="font-medium text-[#f0ece0]">
-                        {text.split(" — ")[0]}
-                      </strong>
-                      {text.includes("—") ? ` — ${text.split(" — ")[1]}` : ""}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="reveal-right grid grid-cols-1 gap-4 sm:grid-cols-2">
-              {recognitions.map((item) => (
-                <div
-                  key={item.title}
-                  className="border border-[rgba(201,168,76,0.12)] bg-[rgba(201,168,76,0.02)] p-7 text-center transition-all duration-300 hover:border-[rgba(201,168,76,0.25)] hover:bg-[rgba(201,168,76,0.04)]"
-                >
-                  <div className="mb-3 text-[2rem]">{item.icon}</div>
-                  <h4 className="mb-1.5 font-sans text-[0.95rem] font-semibold text-[#c9a84c]">
-                    {item.title}
-                  </h4>
-                  <p className="text-[0.75rem] leading-[1.4] text-[#a09880]">
-                    {item.text}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section> */}
-
         <section
           id="cta"
           className="relative z-10 bg-wine px-6 py-24 text-center sm:px-8 lg:px-[6%] lg:py-28"

@@ -160,7 +160,10 @@ const TestCard = ({ t }: any) => (
 const Depoimentos = () => {
   return (
     <Layout>
-      <div className="relative overflow-x-hidden bg-wine-gradient text-[#f0ece0] font-sans">
+      <div
+        id="depoimentos"
+        className="relative overflow-x-hidden bg-wine-gradient text-[#f0ece0] font-sans"
+      >
         <section className="relative overflow-hidden text-center flex items-center justify-center min-h-[52vh] pt-[120px] pb-[80px] px-[6%]">
           <div className="hero-vignette"></div>
           <div className="hero-arc arc1"></div>
@@ -177,10 +180,7 @@ const Depoimentos = () => {
               Histórias reais de clientes que confiaram em nosso trabalho
               <br />e conquistaram seus direitos.
             </p>
-            <div
-              className=" inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.18)] px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-md text-center
-"
-            >
+            <div className=" inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.18)] px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-md text-center">
               <div className="flex gap-[2px] sm:gap-[3px]">
                 <span className="text-[0.85rem] sm:text-[1rem] text-[var(--gold)]">
                   ★
