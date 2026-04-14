@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Calendar, ArrowRight } from "lucide-react";
+import { Calendar } from "lucide-react";
 import WaIcon from "../ui/WaIcon";
 import { LightBlobs } from "../ui/LightBlobs";
 import { DarkBlobs } from "../ui/DarkBlobs";
@@ -42,19 +41,36 @@ export const FinalCTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="heroPrimary" size="xl" asChild>
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
+            <button
+              type="submit"
+              className="btn-primary text-sm"
+              style={{ width: "100%", padding: "18px" }}
+            >
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex gap-2"
+              >
                 <WaIcon />
                 Avaliar meu caso no WhatsApp
-                <ArrowRight className="w-5 h-5" />
               </a>
-            </Button>
-            <Button variant="heroSecondary" size="xl" asChild>
-              <a href="/contato">
+            </button>
+
+            <button
+              type="submit"
+              className="btn-secondary text-sm"
+              style={{ width: "100%", padding: "18px" }}
+            >
+              <a
+                href="/contato"
+                rel="noopener noreferrer"
+                className="flex gap-2"
+              >
                 <Calendar className="w-5 h-5" />
-                Agendar Consulta
+                Agendar Consulta{" "}
               </a>
-            </Button>
+            </button>
           </div>
 
           {/* Trust note */}

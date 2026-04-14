@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import WaIcon from "../ui/WaIcon";
 import { LightBlobs } from "../ui/LightBlobs";
@@ -56,16 +55,21 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
-              <Button variant="heroPrimary" size="xl" asChild>
+              <button
+                type="submit"
+                className="btn-primary max-w-lg"
+                style={{ width: "100%", padding: "18px" }}
+              >
                 <a
                   href={WHATSAPP_LINK}
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex gap-2"
                 >
                   <WaIcon />
                   Avaliar meu caso no WhatsApp
                 </a>
-              </Button>
+              </button>
             </motion.div>
           </div>
         </div>

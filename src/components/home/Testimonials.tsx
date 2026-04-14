@@ -124,7 +124,7 @@ export const Testimonials = () => {
             O que nossos clientes dizem
           </h2>
           <p className="text-muted-foreground">
-            Mais de 15.000 clientes atendidos em todo o Brasil. Confira alguns
+            Mais de 25.000 clientes atendidos em todo o Brasil. Confira alguns
             depoimentos de quem confiou no nosso trabalho.
           </p>
         </motion.div>
@@ -147,43 +147,6 @@ export const Testimonials = () => {
             </span>
           </div>
         </motion.div>
-
-        {/* Testimonials grid */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.slice(0, visibleCount).map((testimonial, index) => (
-            <motion.div
-              key={testimonial.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="card-premium group cursor-pointer border-accent/20"
-            >
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
-                ))}
-              </div>
-
-              <p className="text-foreground mb-4 leading-relaxed">
-                "{testimonial.text}"
-              </p>
-
-              <span className="inline-block text-xs bg-primary/10 text-primary px-4 py-2 rounded-full mb-4">
-                {testimonial.service}
-              </span>
-
-              <div className="border-t border-border pt-4">
-                <p className="font-semibold text-foreground">
-                  {testimonial.name}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {testimonial.location}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div> */}
 
         <TestimonialsCarousel />
 
