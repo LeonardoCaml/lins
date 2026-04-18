@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Instagram, Clock } from "lucide-react";
 import logo from "@/assets/logo.png";
+import badge from "@/assets/badge.jpeg";
 
 const WHATSAPP_LINK = "https://wa.me/5581999279799";
 
@@ -101,6 +102,7 @@ export const Footer = () => {
               © {new Date().getFullYear()} Lins Advogados. Todos os direitos
               reservados.
             </p>
+            <div><img src={badge} alt="Badge" className="w-36" /></div>
             <div className="flex gap-6 text-sm text-primary-foreground/60">
               <Link
                 to="/privacidade"
