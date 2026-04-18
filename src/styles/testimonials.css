@@ -205,42 +205,50 @@ h1 em {
 }
 
 /* TICKER */
-.ticker {
-  background: linear-gradient(
-    90deg,
-    var(--wine-deep),
-    var(--wine-medium),
-    var(--wine-deep)
-  );
-  padding: 11px 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 10;
-}
-.ticker-inner {
+.ticker-track {
   display: flex;
-  gap: 48px;
-  animation: tick 22s linear infinite;
-  white-space: nowrap;
+  width: max-content;
+  gap: 24px;
+  animation: ticker-scroll 22s linear infinite;
 }
-@keyframes tick {
-  from {
+
+/* mobile first */
+.ticker-item {
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0.8;
+}
+
+/* tablet */
+@media (min-width: 640px) {
+  .ticker-track {
+    gap: 32px;
+  }
+
+  .ticker-item {
+    font-size: 0.85rem;
+  }
+}
+
+/* desktop */
+@media (min-width: 1024px) {
+  .ticker-track {
+    gap: 48px;
+  }
+
+  .ticker-item {
+    font-size: 0.95rem;
+  }
+}
+
+/* animação */
+@keyframes ticker-scroll {
+  0% {
     transform: translateX(0);
   }
-  to {
+  100% {
     transform: translateX(-50%);
   }
-}
-.ticker span {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: rgba(240, 236, 224, 0.7);
-}
-.ticker-dot {
-  color: var(--gold);
-  opacity: 0.8;
 }
 
 /* TESTIMONIALS */
