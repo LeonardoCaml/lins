@@ -269,17 +269,15 @@ const Depoimentos = () => {
               Agende sua análise de caso e descubra como podemos ajudar você a
               conquistar seus direitos com estratégia e comprometimento.
             </p>
-            <button type="submit" className="btn-primary text-sm">
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-2"
-              >
-                <WaIcon />
-                Avaliar meu caso no WhatsApp
-              </a>
-            </button>
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm inline-flex items-center gap-2"
+            >
+              <WaIcon />
+              Avaliar meu caso no WhatsApp
+            </a>
             <p className="cta-note">
               ✦ Resposta em até 2 horas úteis &nbsp;·&nbsp; Atendimento
               presencial ou online

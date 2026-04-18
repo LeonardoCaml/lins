@@ -1,4 +1,5 @@
 import about from "@/assets/about-image.jpg";
+import { Link } from "react-router-dom";
 
 const stats = [
   {
@@ -334,9 +335,12 @@ const Sobre = () => {
                 juridiquês — apenas uma conversa direta sobre o que você
                 precisa.
               </p>
-              <button className="inline-flex items-center justify-center border-0 bg-gradient-to-r from-[#e8c96a] to-[#c9a84c] px-10 py-[18px] text-[0.85rem] font-bold uppercase tracking-[2px] text-[#080808] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(201,168,76,0.35)]">
+              <Link
+                to="/contato"
+                className="inline-flex items-center justify-center border-0 bg-gradient-to-r from-[#e8c96a] to-[#c9a84c] px-10 py-[18px] text-[0.85rem] font-bold uppercase tracking-[2px] text-[#080808] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_rgba(201,168,76,0.35)]"
+              >
                 Agendar Consulta Gratuita →
-              </button>
+              </Link>
               <p className="mt-5 text-[0.75rem] text-[#7a7060]">
                 ✦ Retorno garantido em até 2 horas úteis &nbsp;·&nbsp;
                 Atendimento presencial ou online

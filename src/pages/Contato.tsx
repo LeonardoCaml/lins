@@ -63,8 +63,8 @@ const Contato = () => {
 
         <div id="contact">
           <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="relative overflow-hidden text-center px-6 py-10 sm:px-8 sm:py-11 border-r border-[rgba(201,168,76,0.06)] last:border-r-0 transition duration-30 hover:bg-[rgba(107,31,42,0.06) after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-[var(--gold)] after:opacity-50 after:transition-all after:duration-300 hover:after:w-[60%]">
-              <MapPin className="text-accent mx-auto mb-3 h-8 w-8 leading-none bg-[linear-gradient(135deg,#f0bd47,#c38e22)] bg-clip-text" />
+            <div className="relative overflow-hidden text-center px-6 py-10 sm:px-8 sm:py-11 border-r border-[rgba(201,168,76,0.06)] last:border-r-0 transition duration-300 hover:bg-[rgba(107,31,42,0.06)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-[var(--gold)] after:opacity-50 after:transition-all after:duration-300 hover:after:w-[60%]">
+              <MapPin className="text-accent mx-auto mb-3 h-8 w-8" />
               <div className="text-xs tracking-[2px] uppercase text-primary-foreground/80 mb-2">
                 Endereço
               </div>
@@ -74,7 +74,7 @@ const Contato = () => {
               </div>
             </div>
             <div className=" relative overflow-hidden text-center px-6 py-10 sm:px-8 sm:py-11 border-r border-[rgba(201,168,76,0.06)] last:border-r-0 transition duration-30 hover:bg-[rgba(107,31,42,0.06)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-[var(--gold)]  after:opacity-50 after:transition-all after:duration-300 hover:after:w-[60%]">
-              <Phone className="text-accent mx-auto mb-3 h-8 w-8 leading-none bg-[linear-gradient(135deg,#f0bd47,#c38e22)] bg-clip-text" />
+              <Phone className="text-accent mx-auto mb-3 h-8 w-8" />
               <div className="text-xs tracking-[2px] uppercase text-primary-foreground/80 mb-2">
                 Telefone
               </div>
@@ -86,7 +86,7 @@ const Contato = () => {
               </a>
             </div>
             <div className=" relative overflow-hidden text-center px-6 py-10 sm:px-8 sm:py-11 border-r border-[rgba(201,168,76,0.06)] last:border-r-0 transition duration-300 hover:bg-[rgba(107,31,42,0.06)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-[var(--gold)] after:opacity-50 after:transition-all after:duration-300 hover:after:w-[60%]">
-              <Mail className="text-accent mx-auto mb-3 h-8 w-8 leading-none bg-[linear-gradient(135deg,#f0bd47,#c38e22)] bg-clip-text" />
+              <Mail className="text-accent mx-auto mb-3 h-8 w-8" />
               <div className="text-xs tracking-[2px] uppercase text-primary-foreground/80 mb-2">
                 E-mail
               </div>
@@ -98,7 +98,7 @@ const Contato = () => {
               </a>
             </div>
             <div className="relative overflow-hidden text-center px-6 py-10 sm:px-8 sm:py-11 border-r border-[rgba(201,168,76,0.06)] last:border-r-0 transition duration-300 hover:bg-[rgba(107,31,42,0.06)] after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-[var(--gold)] after:opacity-50 after:transition-all after:duration-300 hover:after:w-[60%]">
-              <Clock className="text-accent mx-auto mb-3 h-8 w-8 leading-none bg-[linear-gradient(135deg,#f0bd47,#c38e22)] bg-clip-text" />
+              <Clock className="text-accent mx-auto mb-3 h-8 w-8" />
               <div className="text-xs tracking-[2px] uppercase text-primary-foreground/80 mb-2">
                 Atendimento
               </div>

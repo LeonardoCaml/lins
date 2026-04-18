@@ -195,17 +195,15 @@ const AreasDeAtuacao = () => {
                     <p className="text-muted-foreground leading-relaxed mb-6">
                       {service.description}
                     </p>
-                    <button type="submit" className="btn-primary">
-                      <a
-                        href={WHATSAPP_LINK + service.title}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex gap-2 items-center"
-                      >
-                        <WaIcon />
-                        Consultar sobre {service.title.split(" ")[0]}
-                      </a>
-                    </button>
+                    <a
+                      href={WHATSAPP_LINK + service.title}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary inline-flex items-center gap-2"
+                    >
+                      <WaIcon />
+                      Consultar sobre {service.title.split(" ")[0]}
+                    </a>
                   </div>
                   {/* Items list */}
                   <div
@@ -238,21 +236,15 @@ const AreasDeAtuacao = () => {
               Entre em contato para uma análise inicial. Nossa equipe vai
               orientar você sobre o melhor caminho para sua situação.
             </p>
-            <button
-              type="submit"
-              className="btn-primary max-w-lg"
-              style={{ width: "100%", padding: "18px" }}
+            <a
+              href={WHATSAPP_LINK + "meu caso"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary max-w-lg w-full flex items-center justify-center gap-2 py-[18px] px-8"
             >
-              <a
-                href={WHATSAPP_LINK + "meu caso"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-2"
-              >
-                <WaIcon />
-                Falar com um Especialista
-              </a>
-            </button>
+              <WaIcon />
+              Falar com um Especialista
+            </a>
           </div>
         </section>
       </div>
