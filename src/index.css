@@ -168,7 +168,7 @@
     background-clip: text;
   }
 
-  .bg-muted {
+  .bg-section-warm {
     background: linear-gradient(
       0deg,
       rgb(255, 219, 219) 0%,
