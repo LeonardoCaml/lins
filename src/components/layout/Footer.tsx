@@ -11,7 +11,7 @@ export const Footer = () => {
       <div className="gold-line" />
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Logo & About */}
           <div className="space-y-6">
             <img src={logo} alt="Lins Advogados" className="h-16 w-auto" />
@@ -49,20 +49,6 @@ export const Footer = () => {
                   {link.name}
                 </Link>
               ))}
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-lg font-heading text-accent mb-6">
-              Especialidades
-            </h4>
-            <ul className="space-y-3 text-sm text-primary-foreground/80">
-              <li>Aposentadorias INSS</li>
-              <li>BPC/LOAS</li>
-              <li>Auxílio-doença</li>
-              <li>Pensão por Morte</li>
-              <li>Revisões Previdenciárias</li>
             </ul>
           </div>
 
