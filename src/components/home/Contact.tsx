@@ -12,7 +12,6 @@ const ContactSection = () => {
         <DarkBlobs />
       </div>
       <div className="cta-box reveal text-center">
-        <div className="section-label justify-center">Próximo Passo</div>
         <h2 className="text-3xl md:text-6xl font-sans font-bold text-primary-foreground">
           Fale com um advogado agora e
           <span className="text-accent"> entenda seu caso</span>

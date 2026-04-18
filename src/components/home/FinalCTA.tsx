@@ -3,6 +3,7 @@ import { Calendar } from "lucide-react";
 import WaIcon from "../ui/WaIcon";
 import { LightBlobs } from "../ui/LightBlobs";
 import { DarkBlobs } from "../ui/DarkBlobs";
+import { Link } from "react-router-dom";
 
 const WHATSAPP_LINK =
   "https://wa.me/5581999279799?text=Olá! Gostaria de avaliar meu caso.";
@@ -62,14 +63,10 @@ export const FinalCTA = () => {
               className="btn-secondary text-sm"
               style={{ width: "100%", padding: "18px" }}
             >
-              <a
-                href="/contato"
-                rel="noopener noreferrer"
-                className="flex gap-2"
-              >
+              <Link to="/contato" className="flex gap-2">
                 <Calendar className="w-5 h-5" />
                 Agendar Consulta{" "}
-              </a>
+              </Link>
             </button>
           </div>
 
