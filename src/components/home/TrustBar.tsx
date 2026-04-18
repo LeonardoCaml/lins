@@ -26,29 +26,41 @@ const trustItems = [
 
 export const TrustBar = () => {
   return (
-    <section className="bg-secondary py-12 border-y border-border">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="relative section-wine border-y border-accent/10 overflow-hidden">
+      {/* Gold line at top */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gold-gradient" />
+
+      <div className="mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-accent/10 overflow-hidden border border-accent/10">
           {trustItems.map((item, index) => (
             <motion.div
               key={item.title}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex items-center gap-4"
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="flex flex-col items-center text-center gap-4 px-8 py-10 bg-wine-gradient"
             >
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                <item.icon className="w-6 h-6 text-primary" />
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center flex-shrink-0">
+                <item.icon className="w-6 h-6 text-accent" />
               </div>
+
               <div>
-                <h3 className="font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="font-semibold text-primary-foreground leading-tight">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-primary-foreground/60 mt-1 leading-relaxed">
+                  {item.description}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Gold line at bottom */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gold-gradient opacity-40" />
     </section>
   );
 };

@@ -7,6 +7,7 @@ import {
   Users,
   Gavel,
   Building,
+  Shield,
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -38,14 +39,14 @@ const services = [
     title: "BPC/LOAS",
     description:
       "Análise de elegibilidade para benefício assistencial destinado a idosos e pessoas com deficiência.",
-    highlight: true,
+    highlight: false,
   },
   {
     icon: FileText,
     title: "Pensão por Morte",
     description:
       "Acompanhamento completo para garantir o benefício aos dependentes do segurado.",
-    highlight: true,
+    highlight: false,
   },
   {
     icon: Gavel,
@@ -62,7 +63,7 @@ const services = [
     highlight: false,
   },
   {
-    icon: Scale,
+    icon: Shield,
     title: "Direito Administrativo",
     description:
       "Atuação em concursos, direitos de servidores e processos contra a administração pública.",
@@ -72,7 +73,7 @@ const services = [
 
 export const Services = () => {
   return (
-    <section id="areas-de-atuacao" className="py-20 bg-background">
+    <section id="areas-de-atuacao" className="py-16 bg-background">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <motion.div

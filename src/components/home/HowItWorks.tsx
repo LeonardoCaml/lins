@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
-import { MessageSquare, Search, CheckCircle } from "lucide-react";
-import { DarkBlobs } from "../ui/DarkBlobs";
-import { LightBlobs } from "../ui/LightBlobs";
+import { MessageSquare, Search, CheckCircle, ArrowRight } from "lucide-react";
 
 const steps = [
   {
@@ -29,13 +27,7 @@ const steps = [
 
 export const HowItWorks = () => {
   return (
-    <section className="py-20 section-wine relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <LightBlobs />
-        <DarkBlobs />
-      </div>
-
+    <section className="py-16 section-wine relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         {/* Section header */}
         <motion.div
@@ -57,30 +49,45 @@ export const HowItWorks = () => {
         </motion.div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-8">
+        <div className="flex flex-col md:flex-row items-stretch">
           {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="relative"
-            >
-              <div className="card-wine text-center relative z-10">
-                {/* Number badge */}
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent text-accent-foreground font-bold text-lg mb-6">
-                  {step.number}
-                </div>
+            <div key={step.number} className="flex flex-col md:flex-row items-center flex-1 min-w-0">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
+                className="flex-1 w-full"
+              >
+                <div className="card-wine text-center relative z-10 h-full">
+                  {/* Number badge */}
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-accent text-accent-foreground font-bold text-lg mb-6">
+                    {step.number}
+                  </div>
 
-                <h3 className="text-xl font-sans font-semibold text-primary-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-primary-foreground/70 text-sm leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            </motion.div>
+                  <h3 className="text-xl font-sans font-semibold text-primary-foreground mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                    {step.description}
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Connector arrow — desktop only, not after last */}
+              {index < steps.length - 1 && (
+                <div className="hidden md:flex items-center justify-center px-3 shrink-0 text-accent/40 my-6">
+                  <ArrowRight className="w-5 h-5" />
+                </div>
+              )}
+
+              {/* Connector — mobile vertical */}
+              {index < steps.length - 1 && (
+                <div className="flex md:hidden justify-center py-3">
+                  <div className="w-px h-8 bg-accent/25" />
+                </div>
+              )}
+            </div>
           ))}
         </div>
       </div>

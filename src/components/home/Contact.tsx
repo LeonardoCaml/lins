@@ -1,16 +1,10 @@
-import { DarkBlobs } from "../ui/DarkBlobs";
-import { LightBlobs } from "../ui/LightBlobs";
-
 const ContactSection = () => {
   return (
     <section
       id="contato"
       className="relative overflow-hidden bg-wine-gradient py-16 sm:py-20 lg:py-28"
     >
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <LightBlobs />
-        <DarkBlobs />
-      </div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gold-gradient" />
       <div className="cta-box reveal text-center">
         <h2 className="text-3xl md:text-6xl font-sans font-bold text-primary-foreground">
           Fale com um advogado agora e

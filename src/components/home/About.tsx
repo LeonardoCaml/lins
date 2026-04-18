@@ -1,16 +1,9 @@
 import { Award, Users, MapPin, Heart } from "lucide-react";
 import about from "@/assets/about-image.jpg";
-import { LightBlobs } from "../ui/LightBlobs";
-import { DarkBlobs } from "../ui/DarkBlobs";
 
 const AboutSection = () => {
   return (
-    <section id="sobre" className="py-20 section-wine relative overflow-hidden">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <LightBlobs />
-        <DarkBlobs />
-      </div>
-
+    <section id="sobre" className="py-24 section-wine relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image placeholder */}

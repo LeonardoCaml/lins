@@ -53,31 +53,6 @@ const stats = [
   { value: "5★", label: "Avaliação" },
 ];
 
-const floatAnimations = [
-  {
-    y: [0, -12, 0],
-    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" as const },
-  },
-  {
-    y: [0, -10, 0],
-    transition: {
-      duration: 5,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-      delay: 1.3,
-    },
-  },
-  {
-    y: [0, -14, 0],
-    transition: {
-      duration: 3.8,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-      delay: 2.6,
-    },
-  },
-];
-
 export const WhyUs = () => {
   return (
     <section className="py-20 bg-background relative overflow-hidden">
@@ -102,12 +77,15 @@ export const WhyUs = () => {
               primeira qualidade.
             </p>
 
-            {/* Floating stat badges */}
-            <div className="flex items-end gap-4 h-24">
+            {/* Stat badges */}
+            <div className="flex items-end gap-4">
               {stats.map((stat, i) => (
                 <motion.div
                   key={stat.label}
-                  animate={floatAnimations[i]}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.45, delay: 0.3 + i * 0.1 }}
                   className="text-center px-5 py-3 rounded-2xl bg-primary/5 border border-primary/10"
                 >
                   <p className="text-2xl font-heading font-bold text-primary leading-none">

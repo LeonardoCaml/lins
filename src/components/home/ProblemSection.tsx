@@ -30,8 +30,8 @@ const problems = [
 
 const ProblemSection = () => {
   return (
-    <section className="section-padding bg-muted">
-      <div className="container mx-auto px-4 py-20 container-narrow">
+    <section className="section-padding bg-section-warm">
+      <div className="container mx-auto px-4 py-16 container-narrow">
         <div className="text-center mb-12">
           <span className="text-sm font-semibold text-accent uppercase tracking-widest">
             Você se identifica?
@@ -45,22 +45,30 @@ const ProblemSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {problems.map((problem) => (
-            <div
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {problems.map((problem, index) => (
+            <motion.div
               key={problem.title}
-              className="bg-card rounded-xl p-6 border border-border hover:border-wine/30 transition-colors group"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="relative bg-card rounded-2xl p-6 border border-border overflow-hidden group transition-all duration-300 ease-out hover:-translate-y-1 hover:border-wine/50 hover:shadow-[0_8px_32px_-4px_rgba(var(--wine-rgb,100,20,30),0.18)]"
             >
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-wine/20 transition-colors">
-                <problem.icon className="w-6 h-6 text-wine" />
+              {/* Top accent bar */}
+              <span className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-wine/60 via-wine to-wine/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-2xl bg-accent/10 border border-accent/25 flex items-center justify-center flex-shrink-0 mb-4">
+                <problem.icon className="w-5 h-5 text-accent transition-transform duration-300 group-hover:scale-110" />
               </div>
-              <h3 className="font-semibold text-foreground mb-2">
+
+              <h3 className="font-semibold text-foreground mb-2 leading-snug">
                 {problem.title}
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-muted-foreground leading-relaxed">
                 {problem.description}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

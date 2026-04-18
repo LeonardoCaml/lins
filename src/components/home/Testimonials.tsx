@@ -108,7 +108,7 @@ export const Testimonials = () => {
   const [visibleCount, setVisibleCount] = useState(3);
 
   return (
-    <section id="depoimentos" className="py-20 bg-secondary">
+    <section id="depoimentos" className="py-24 bg-secondary">
       <div className="container mx-auto px-4">
         {/* Section header */}
         <motion.div

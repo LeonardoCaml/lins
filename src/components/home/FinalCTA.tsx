@@ -1,8 +1,6 @@
 import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 import WaIcon from "../ui/WaIcon";
-import { LightBlobs } from "../ui/LightBlobs";
-import { DarkBlobs } from "../ui/DarkBlobs";
 import { Link } from "react-router-dom";
 
 const WHATSAPP_LINK =
@@ -10,20 +8,12 @@ const WHATSAPP_LINK =
 
 export const FinalCTA = () => {
   return (
-    <section className="relative py-20 overflow-hidden">
+    <section className="relative py-28 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-wine-gradient" />
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <LightBlobs />
-        <DarkBlobs />
-      </div>
 
       {/* Gold accent line at top */}
       <div className="absolute top-0 left-0 right-0 h-1 bg-gold-gradient" />
-
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -42,32 +32,23 @@ export const FinalCTA = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button
-              type="submit"
-              className="btn-primary text-sm"
-              style={{ width: "100%", padding: "18px" }}
+            <a
+              href={WHATSAPP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary text-sm w-full flex items-center justify-center gap-2 py-[18px] px-8"
             >
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex gap-2"
-              >
-                <WaIcon />
-                Avaliar meu caso no WhatsApp
-              </a>
-            </button>
+              <WaIcon />
+              Avaliar meu caso no WhatsApp
+            </a>
 
-            <button
-              type="submit"
-              className="btn-secondary text-sm"
-              style={{ width: "100%", padding: "18px" }}
+            <Link
+              to="/contato"
+              className="btn-secondary text-sm w-full flex items-center justify-center gap-2 py-[18px] px-8"
             >
-              <Link to="/contato" className="flex gap-2">
-                <Calendar className="w-5 h-5" />
-                Agendar Consulta{" "}
-              </Link>
-            </button>
+              <Calendar className="w-5 h-5" />
+              Agendar Consulta
+            </Link>
           </div>
 
           {/* Trust note */}

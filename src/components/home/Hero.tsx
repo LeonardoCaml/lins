@@ -55,21 +55,15 @@ export const Hero = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
             >
-              <button
-                type="submit"
-                className="btn-primary max-w-lg"
-                style={{ width: "100%", padding: "18px" }}
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary max-w-lg w-full flex items-center justify-center gap-2 py-[18px] px-8"
               >
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex gap-2"
-                >
-                  <WaIcon />
-                  Avaliar meu caso no WhatsApp
-                </a>
-              </button>
+                <WaIcon />
+                Avaliar meu caso no WhatsApp
+              </a>
             </motion.div>
           </div>
         </div>
