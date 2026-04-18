@@ -102,7 +102,9 @@ export const Footer = () => {
               © {new Date().getFullYear()} Lins Advogados. Todos os direitos
               reservados.
             </p>
-            <div><img src={badge} alt="Badge" className="w-36" /></div>
+            <a href="https://virtuazza.com/" target="_blank">
+              <img src={badge} alt="Badge" className="w-36" />
+            </a>
             <div className="flex gap-6 text-sm text-primary-foreground/60">
               <Link
                 to="/privacidade"
