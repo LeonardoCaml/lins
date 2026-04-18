@@ -50,27 +50,6 @@ const timeline = [
   },
 ];
 
-const team = [
-  {
-    name: "Dr. Ricardo Silva",
-    oab: "OAB/PA 00.001 — Sócio Fundador",
-    bio: "Pós-graduado em Direito Empresarial pela FGV/SP. 20 anos de experiência em litígios corporativos e planejamento tributário.",
-    tags: ["Empresarial", "Tributário"],
-  },
-  {
-    name: "Dra. Camila Moreira",
-    oab: "OAB/PA 00.042 — Sócia",
-    bio: "Especialista em Direito de Família e Sucessões pela UFPA. Mediadora certificada pelo CNJ com mais de 400 casos concluídos.",
-    tags: ["Família", "Sucessões"],
-  },
-  {
-    name: "Dr. André Tavares",
-    oab: "OAB/PA 00.089 — Associado Sênior",
-    bio: "Mestre em Direito Tributário pela USP. Especialista em recuperação de créditos e planejamento fiscal para empresas de médio e grande porte.",
-    tags: ["Tributário", "Fiscal"],
-  },
-];
-
 const trustCards = [
   {
     icon: "⚖️",
@@ -122,11 +101,6 @@ const Sobre = () => {
           className="relative z-10 grid min-h-screen grid-cols-1 overflow-hidden lg:grid-cols-2"
         >
           <div className="relative z-20 flex flex-col justify-center px-6 pb-16 pt-32 sm:px-8 sm:pt-36 lg:px-[6%] lg:pb-20 lg:pt-40">
-            <div className="mb-8 flex items-center gap-3 text-[0.72rem] uppercase tracking-[2px] text-[#7a7060] sm:text-[0.78rem]">
-              <span className="h-px w-6 bg-[#8a6b2a]" />
-              <span className="text-[#c9a84c]">Sobre o Escritório</span>
-            </div>
-
             <div className="mb-5 inline-flex w-fit border border-[#c9a84c]/20 bg-[#c9a84c]/10 px-3 py-1.5 text-[0.68rem] uppercase tracking-[3px] text-[#c9a84c]">
               Nossa história
             </div>
@@ -143,7 +117,7 @@ const Sobre = () => {
               que confia em nosso trabalho.
             </p>
 
-            <div className="flex w-fit flex-col gap-4 border border-[#c9a84c]/12 bg-[#c9a84c]/5 px-5 py-5 sm:flex-row sm:items-center sm:gap-5 sm:px-6">
+            <div className="space-y-2 bg-[var(--glass)] border border-[var(--glass-border)] p-6 inline-block md:w-[60%] backdrop-blur-[6px] transition hover:-translate-y-1 hover:border-[rgba(201,168,76,0.25)]">
               <div className="font-sans text-[2.4rem] font-black leading-none text-[#c9a84c]">
                 2006
               </div>
@@ -180,13 +154,13 @@ const Sobre = () => {
 
         <div
           id="numbers"
-          className="relative z-10 border-y border-[#c9a84c]/6 bg-wine-gradient"
+          className="relative z-10 border-y border-[#c9a84c]/20 bg-wine"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {stats.map((item, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden border-b border-[#c9a84c]/7 px-6 py-12 text-center transition-colors duration-300 last:border-b-0 md:border-r md:last:border-r-0 xl:border-b-0"
+                className="relative overflow-hidden text-center px-6 py-10 sm:px-8 sm:py-11 border-r border-[rgba(201,168,76,0.06)] last:border-r-0 transition duration-30 hover:bg-[rgba(107,31,42,0.06) after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-[var(--gold)] after:opacity-50 after:transition-all after:duration-300 hover:after:w-[60%]"
               >
                 <div className="absolute inset-x-0 bottom-0 mx-auto h-px w-0 bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent transition-all duration-300 group-hover:w-[80%]" />
                 <div className="font-heading text-[3.2rem] font-black leading-none text-transparent bg-clip-text bg-gradient-to-r from-[#e8c96a] to-[#c9a84c]">
@@ -203,219 +177,144 @@ const Sobre = () => {
           </div>
         </div>
 
-        <section
-          id="history"
-          className="relative z-10 bg-wine px-6 py-24 sm:px-8 lg:px-[6%] lg:py-28"
-        >
-          <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-20">
-            <div className="reveal-left">
-              <div className="mb-4 flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
-                <span className="h-px w-7 bg-[#c9a84c]" />
-                Nossa trajetória
+        <div className="space-y-16 py-24">
+          <section
+            id="history"
+            className="relative z-10 bg-wine px-6 sm:px-8 lg:px-[6%]"
+          >
+            <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-20">
+              <div className="reveal-left">
+                <h2 className="mb-4 text-[clamp(1.9rem,3.5vw,2.8rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
+                  Uma história construída
+                  <br />
+                  sobre <span className="text-[#c9a84c]">resultados reais</span>
+                </h2>
+                <div className="space-y-6 text-[0.97rem] font-light leading-[1.85] text-[#a09880]">
+                  <p>
+                    A trajetória da{" "}
+                    <strong className="font-medium text-[#f0ece0]">
+                      Lins Advogados
+                    </strong>{" "}
+                    é pautada pelo compromisso com a justiça e a dignidade
+                    humana. Nossa história teve início há duas décadas, quando a
+                    fundadora,{" "}
+                    <strong className="font-medium text-[#f0ece0]">
+                      Luciana Lins
+                    </strong>
+                    , movida pelo desejo de ajudar, viabilizou a aposentadoria
+                    de uma pessoa próxima que sofria de erisipela. Esse primeiro
+                    caso não foi apenas uma vitória jurídica, mas o alicerce de
+                    um escritório que nasceu para transformar vidas.
+                  </p>
+                  <p>
+                    Ao longo desses 20 anos, evoluímos com solidez e ética. O
+                    que começou com um atendimento personalizado transformou-se
+                    em uma estrutura robusta que hoje conta com{" "}
+                    <strong className="font-medium text-[#f0ece0]">
+                      quatro unidades presenciais
+                    </strong>
+                    , preparadas para oferecer suporte jurídico de excelência e
+                    manter a proximidade que sempre foi nossa marca registrada.
+                  </p>
+                  <blockquote className="my-10 border-l-[3px] border-[#c9a84c] bg-[#c9a84c]/5 px-7 py-5 text-[1.35rem] font-medium italic leading-[1.5] text-[#f0ece0]">
+                    "Advogar é, antes de tudo, um ato de compromisso com a
+                    dignidade humana."
+                    <small className="mt-3 block not-italic font-sans text-[0.8rem] font-normal text-[#a09880]">
+                      — Sobral Pinto
+                    </small>
+                  </blockquote>
+                </div>
               </div>
-              <h2 className="mb-4 text-[clamp(1.9rem,3.5vw,2.8rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
-                Uma história construída
-                <br />
-                sobre <span className="text-[#c9a84c]">resultados reais</span>
-              </h2>
-
-              <div className="space-y-6 text-[0.97rem] font-light leading-[1.85] text-[#a09880]">
-                <p>
-                  A trajetória da{" "}
-                  <strong className="font-medium text-[#f0ece0]">
-                    Lins Advogados
-                  </strong>{" "}
-                  é pautada pelo compromisso com a justiça e a dignidade humana.
-                  Nossa história teve início há duas décadas, quando a
-                  fundadora,{" "}
-                  <strong className="font-medium text-[#f0ece0]">
-                    Luciana Lins
-                  </strong>
-                  , movida pelo desejo de ajudar, viabilizou a aposentadoria de
-                  uma pessoa próxima que sofria de erisipela. Esse primeiro caso
-                  não foi apenas uma vitória jurídica, mas o alicerce de um
-                  escritório que nasceu para transformar vidas.
-                </p>
-                <p>
-                  Ao longo desses 20 anos, evoluímos com solidez e ética. O que
-                  começou com um atendimento personalizado transformou-se em uma
-                  estrutura robusta que hoje conta com{" "}
-                  <strong className="font-medium text-[#f0ece0]">
-                    quatro unidades presenciais
-                  </strong>
-                  , preparadas para oferecer suporte jurídico de excelência e
-                  manter a proximidade que sempre foi nossa marca registrada.
-                </p>
-
-                <blockquote className="my-10 border-l-[3px] border-[#c9a84c] bg-[#c9a84c]/5 px-7 py-5 text-[1.35rem] font-medium italic leading-[1.5] text-[#f0ece0]">
-                  "Advogar é, antes de tudo, um ato de compromisso com a
-                  dignidade humana."
-                  <small className="mt-3 block not-italic font-sans text-[0.8rem] font-normal text-[#a09880]">
-                    — Sobral Pinto
-                  </small>
-                </blockquote>
-              </div>
-            </div>
-
-            <div className="reveal-right">
-              <div className="mb-4 flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
-                <span className="h-px w-7 bg-[#c9a84c]" />
-                Linha do Tempo
-              </div>
-
-              <div className="flex flex-col">
-                {timeline.map((item, index) => (
-                  <div
-                    key={index}
-                    className="relative grid grid-cols-[80px_1fr] gap-6 last:pb-0"
-                  >
-                    {index < timeline.length - 1 && (
-                      <div className="absolute bottom-3 left-[39px] top-[44px] w-px bg-gradient-to-b from-[#c9a84c]/30 to-[#c9a84c]/5" />
-                    )}
-                    <div className="relative text-right font-sans text-md font-semibold text-[#c9a84c]">
-                      {item.year}
-                    </div>
-                    <div className="flex pl-5 pb-10">
-                      <span className="absolute left-5 top-1.5 h-2.5 w-2.5 rounded-full bg-[#c9a84c] shadow-[0_0_12px_rgba(201,168,76,0.4)]" />
-                      <div>
-                        <h4 className="mb-2 text-base font-semibold text-[#f0ece0]">
-                          {item.title}
-                        </h4>
-                        <p className="text-base text-[#a09880]">{item.text}</p>
+              <div className="reveal-right">
+                <div className="mb-4 flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
+                  <span className="h-px w-7 bg-[#c9a84c]" />
+                  Linha do Tempo
+                </div>
+                <div className="flex flex-col">
+                  {timeline.map((item, index) => (
+                    <div
+                      key={index}
+                      className="relative grid grid-cols-[80px_1fr] gap-6 last:pb-0"
+                    >
+                      {index < timeline.length - 1 && (
+                        <div className="absolute bottom-3 left-[39px] top-[44px] w-px bg-gradient-to-b from-[#c9a84c]/30 to-[#c9a84c]/5" />
+                      )}
+                      <div className="relative text-right font-sans text-md font-semibold text-[#c9a84c]">
+                        {item.year}
+                      </div>
+                      <div className="flex pl-5 pb-10">
+                        <span className="absolute left-5 top-1.5 h-2.5 w-2.5 rounded-full bg-[#c9a84c] shadow-[0_0_12px_rgba(201,168,76,0.4)]" />
+                        <div>
+                          <h4 className="mb-2 text-base font-semibold text-[#f0ece0]">
+                            {item.title}
+                          </h4>
+                          <p className="text-base text-[#a09880]">
+                            {item.text}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-
-        <section
-          id="team"
-          className="relative z-10 bg-wine px-6 py-24 sm:px-8 lg:px-[6%] lg:py-28"
-        >
-          <div className="mb-16 grid gap-8 lg:grid-cols-2 lg:items-end lg:gap-20">
-            <div className="reveal-left">
-              <div className="mb-4 flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
-                <span className="h-px w-7 bg-[#c9a84c]" />
-                Time de especialistas
-              </div>
+          </section>
+          <section
+            id="trust"
+            className="relative z-10 bg-wine px-6 sm:px-8 lg:px-[6%]"
+          >
+            <div className="mx-auto mb-16 max-w-2xl text-center">
               <h2 className="text-[clamp(1.9rem,3.5vw,2.8rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
-                Os profissionais por
+                Os pilares que sustentam
                 <br />
-                trás dos seus <span className="text-[#c9a84c]">resultados</span>
+                nossa <span className="text-[#c9a84c]">reputação</span>
               </h2>
+              <p className="mt-4 text-[0.95rem] font-light leading-[1.75] text-[#a09880]">
+                Cada decisão que tomamos é guiada por valores que colocam o
+                cliente acima de tudo.
+              </p>
             </div>
-            <p className="reveal-right max-w-2xl text-[0.95rem] font-light leading-[1.75] text-[#a09880]">
-              Cada membro do nosso time é selecionado não apenas pela formação
-              técnica, mas pelo comprometimento com o cliente e pela capacidade
-              de pensar estrategicamente sob pressão.
-            </p>
-          </div>
-
-          <div className="grid gap-px bg-[rgba(201,168,76,0.06)] md:grid-cols-2 xl:grid-cols-3">
-            {team.map((member) => (
-              <div
-                key={member.name}
-                className="group overflow-hidden bg-[#161616] transition-colors duration-300 hover:bg-[#1e1e1e]"
-              >
-                <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-[linear-gradient(160deg,#181208,#0d0c09)]">
-                  <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#161616] to-transparent transition-colors duration-300 group-hover:from-[#1e1e1e]" />
-                  <div className="relative z-10 text-[5rem] font-black text-[#c9a84c]/10">
-                    §
+            <div className="grid gap-6 xl:grid-cols-3">
+              {trustCards.slice(0, 3).map((card) => (
+                <article
+                  key={card.title}
+                  className="group relative overflow-hidden border border-[rgba(201,168,76,0.15)] bg-[rgba(255,255,255,0.035)] p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(201,168,76,0.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+                >
+                  <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.08)] text-[1.4rem]">
+                    {card.icon}
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 z-20 px-6 py-7">
-                    <div className="font-sans text-[1.15rem] font-bold text-[#f0ece0]">
-                      {member.name}
-                    </div>
-                    <div className="mt-1 text-[0.7rem] uppercase tracking-[2px] text-[#c9a84c]">
-                      {member.oab}
-                    </div>
-                  </div>
-                </div>
-                <div className="border-t border-[#c9a84c]/6 p-6">
-                  <div className="text-[0.8rem] leading-[1.5] text-[#a09880]">
-                    {member.bio}
-                  </div>
-                  <div className="mt-3 flex flex-wrap gap-1.5">
-                    {member.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="border border-[#c9a84c]/15 px-2.5 py-1 text-[0.65rem] uppercase tracking-[1px] text-[#8a6b2a]"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section
-          id="trust"
-          className="relative z-10 bg-wine px-6 py-24 sm:px-8 lg:px-[6%] lg:py-28"
-        >
-          <div className="mx-auto mb-16 max-w-2xl text-center">
-            <div className="mb-4 flex justify-center">
-              <div className="flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
-                <span className="h-px w-7 bg-[#c9a84c]" />
-                Por que nos escolher
-              </div>
+                  <h3 className="mb-3 font-sans text-[1.15rem] font-semibold text-[#f0ece0]">
+                    {card.title}
+                  </h3>
+                  <p className="text-[0.85rem] leading-[1.7] text-[#a09880]">
+                    {card.text}
+                  </p>
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent opacity-30" />
+                </article>
+              ))}
             </div>
-            <h2 className="text-[clamp(1.9rem,3.5vw,2.8rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
-              Os pilares que sustentam
-              <br />
-              nossa <span className="text-[#c9a84c]">reputação</span>
-            </h2>
-            <p className="mt-4 text-[0.95rem] font-light leading-[1.75] text-[#a09880]">
-              Cada decisão que tomamos é guiada por valores que colocam o
-              cliente acima de tudo.
-            </p>
-          </div>
+            <div className="mt-6 grid gap-6 lg:grid-cols-2">
+              {trustCards.slice(3).map((card) => (
+                <article
+                  key={card.title}
+                  className="group relative overflow-hidden border border-[rgba(201,168,76,0.15)] bg-[rgba(255,255,255,0.035)] p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(201,168,76,0.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+                >
+                  <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.08)] text-[1.4rem]">
+                    {card.icon}
+                  </div>
+                  <h3 className="mb-3 font-sans text-[1.15rem] font-semibold text-[#f0ece0]">
+                    {card.title}
+                  </h3>
+                  <p className="text-[0.85rem] leading-[1.7] text-[#a09880]">
+                    {card.text}
+                  </p>
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent opacity-30" />
+                </article>
+              ))}
+            </div>
+          </section>
+        </div>
 
-          <div className="grid gap-6 xl:grid-cols-3">
-            {trustCards.slice(0, 3).map((card) => (
-              <article
-                key={card.title}
-                className="group relative overflow-hidden border border-[rgba(201,168,76,0.15)] bg-[rgba(255,255,255,0.035)] p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(201,168,76,0.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
-              >
-                <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.08)] text-[1.4rem]">
-                  {card.icon}
-                </div>
-                <h3 className="mb-3 font-sans text-[1.15rem] font-semibold text-[#f0ece0]">
-                  {card.title}
-                </h3>
-                <p className="text-[0.85rem] leading-[1.7] text-[#a09880]">
-                  {card.text}
-                </p>
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent opacity-30" />
-              </article>
-            ))}
-          </div>
-
-          <div className="mt-6 grid gap-6 lg:grid-cols-2">
-            {trustCards.slice(3).map((card) => (
-              <article
-                key={card.title}
-                className="group relative overflow-hidden border border-[rgba(201,168,76,0.15)] bg-[rgba(255,255,255,0.035)] p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(201,168,76,0.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
-              >
-                <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.08)] text-[1.4rem]">
-                  {card.icon}
-                </div>
-                <h3 className="mb-3 font-sans text-[1.15rem] font-semibold text-[#f0ece0]">
-                  {card.title}
-                </h3>
-                <p className="text-[0.85rem] leading-[1.7] text-[#a09880]">
-                  {card.text}
-                </p>
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent opacity-30" />
-              </article>
-            ))}
-          </div>
-        </section>
         <section
           id="cta"
           className="relative z-10 bg-wine px-6 py-24 text-center sm:px-8 lg:px-[6%] lg:py-28"
@@ -424,12 +323,6 @@ const Sobre = () => {
             <div className="pointer-events-none absolute inset-[-80px] bg-[radial-gradient(ellipse,rgba(201,168,76,0.06),transparent_70%)]" />
 
             <div className="relative">
-              <div className="mb-4 flex justify-center">
-                <div className="flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
-                  <span className="h-px w-7 bg-[#c9a84c]" />
-                  Próximo passo
-                </div>
-              </div>
               <h2 className="mb-5 text-[clamp(2rem,4vw,3rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
                 Pronto para ter um
                 <br />

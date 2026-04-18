@@ -207,14 +207,10 @@ const Depoimentos = () => {
         </section>
 
         <div id="stats">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 stats-inner reveal">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stats-inner reveal">
             <div className="stat-item reveal">
               <div className="stat-n">12+</div>
               <div className="stat-l">Avaliações 5 Estrelas</div>
-            </div>
-            <div className="stat-item reveal">
-              <div className="stat-n">4.9</div>
-              <div className="stat-l">Nota Média</div>
             </div>
             <div className="stat-item reveal">
               <div className="stat-n">98%</div>
@@ -227,11 +223,11 @@ const Depoimentos = () => {
           </div>
         </div>
 
-        <div className="ticker">
-          <div className="flex gap-[48px] text-gold-gradient whitespace-nowrap animate-[tick_22s_linear_infinite]">
+        <div className="relative overflow-hidden w-full py-2">
+          <div className="ticker-track text-yellow-500 whitespace-nowrap">
             {[...services, ...services].map((s, i) => (
-              <span key={i}>
-                {s} <span>✦</span>
+              <span key={i} className="ticker-item">
+                {s} <span className="mx-2">✦</span>
               </span>
             ))}
           </div>
