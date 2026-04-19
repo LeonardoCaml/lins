@@ -12,11 +12,13 @@ const Privacidade = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-4">
               Política de Privacidade
             </h1>
             <p className="text-primary-foreground/80">
-              Última atualização: Janeiro de 2025
+              Última atualização:{" "}
+              {new Date().toLocaleString("pt-BR", { month: "long" })} de{" "}
+              {new Date().getFullYear()}
             </p>
           </motion.div>
         </div>
@@ -33,19 +35,20 @@ const Privacidade = () => {
           >
             <div className="bg-card rounded-xl p-8 shadow-lg border border-border space-y-6 text-foreground">
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   1. Introdução
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  A Lins Advogados está comprometida com a proteção da sua privacidade 
-                  e dos seus dados pessoais. Esta Política de Privacidade descreve como 
-                  coletamos, usamos, armazenamos e protegemos suas informações, em 
-                  conformidade com a Lei Geral de Proteção de Dados (LGPD - Lei nº 13.709/2018).
+                  A Lins Advogados está comprometida com a proteção da sua
+                  privacidade e dos seus dados pessoais. Esta Política de
+                  Privacidade descreve como coletamos, usamos, armazenamos e
+                  protegemos suas informações, em conformidade com a Lei Geral
+                  de Proteção de Dados (LGPD - Lei nº 13.709/2018).
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   2. Dados Coletados
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -61,7 +64,7 @@ const Privacidade = () => {
               </section>
 
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   3. Finalidade do Tratamento
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -76,30 +79,31 @@ const Privacidade = () => {
               </section>
 
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   4. Compartilhamento de Dados
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Não compartilhamos seus dados pessoais com terceiros, exceto quando 
-                  necessário para a prestação dos serviços jurídicos (como órgãos 
-                  públicos, tribunais ou o INSS) ou quando exigido por lei.
+                  Não compartilhamos seus dados pessoais com terceiros, exceto
+                  quando necessário para a prestação dos serviços jurídicos
+                  (como órgãos públicos, tribunais ou o INSS) ou quando exigido
+                  por lei.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   5. Segurança dos Dados
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Adotamos medidas técnicas e organizacionais adequadas para proteger 
-                  seus dados contra acesso não autorizado, alteração, divulgação ou 
-                  destruição. O sigilo profissional da advocacia também protege 
-                  todas as informações que nos são confiadas.
+                  Adotamos medidas técnicas e organizacionais adequadas para
+                  proteger seus dados contra acesso não autorizado, alteração,
+                  divulgação ou destruição. O sigilo profissional da advocacia
+                  também protege todas as informações que nos são confiadas.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   6. Seus Direitos
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -115,12 +119,13 @@ const Privacidade = () => {
               </section>
 
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   7. Contato
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Para exercer seus direitos ou esclarecer dúvidas sobre esta política, 
-                  entre em contato conosco pelo e-mail: contato@linsadvogados.com.br
+                  Para exercer seus direitos ou esclarecer dúvidas sobre esta
+                  política, entre em contato conosco pelo e-mail:
+                  contato@linsadvogados.com.br
                 </p>
               </section>
             </div>

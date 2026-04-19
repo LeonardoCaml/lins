@@ -12,11 +12,13 @@ const Termos = () => {
             animate={{ opacity: 1, y: 0 }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-foreground mb-4">
+            <h1 className="text-4xl md:text-5xl font-heading font-bold text-primary-foreground mb-4">
               Termos de Uso e Aviso Legal
             </h1>
             <p className="text-primary-foreground/80">
-              Última atualização: Janeiro de 2025
+              Última atualização:{" "}
+              {new Date().toLocaleString("pt-BR", { month: "long" })} de{" "}
+              {new Date().getFullYear()}
             </p>
           </motion.div>
         </div>
@@ -45,7 +47,7 @@ const Termos = () => {
             </div>
             <div className="bg-card rounded-xl p-8 shadow-lg border border-border space-y-6 text-foreground">
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   1. Sobre os Serviços
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -57,7 +59,7 @@ const Termos = () => {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   2. Não Garantia de Resultados
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -77,7 +79,7 @@ const Termos = () => {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   3. Prazos e Processos
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -88,7 +90,7 @@ const Termos = () => {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   4. Confidencialidade
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -99,7 +101,7 @@ const Termos = () => {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   5. Honorários
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -111,7 +113,7 @@ const Termos = () => {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   6. Propriedade Intelectual
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -122,7 +124,7 @@ const Termos = () => {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   7. Alterações nos Termos
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
@@ -131,7 +133,7 @@ const Termos = () => {
                 </p>
               </section>
               <section>
-                <h2 className="text-xl font-serif font-bold text-foreground mb-4">
+                <h2 className="text-xl font-sans font-bold text-foreground mb-4">
                   8. Contato
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
