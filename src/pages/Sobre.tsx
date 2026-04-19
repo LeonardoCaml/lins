@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import about from "@/assets/about-image.jpg";
 import { Link } from "react-router-dom";
 
@@ -102,23 +103,43 @@ const Sobre = () => {
           className="relative z-10 grid min-h-screen grid-cols-1 overflow-hidden lg:grid-cols-2"
         >
           <div className="relative z-20 flex flex-col justify-center px-6 pb-16 pt-32 sm:px-8 sm:pt-36 lg:px-[6%] lg:pb-20 lg:pt-40">
-            <div className="mb-5 inline-flex w-fit border border-[#c9a84c]/20 bg-[#c9a84c]/10 px-3 py-1.5 text-[0.68rem] uppercase tracking-[3px] text-[#c9a84c]">
+            <motion.div
+              className="mb-5 inline-flex w-fit border border-[#c9a84c]/20 bg-[#c9a84c]/10 px-3 py-1.5 text-[0.68rem] uppercase tracking-[3px] text-[#c9a84c]"
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               Nossa história
-            </div>
+            </motion.div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.65, delay: 0.15, ease: "easeOut" }}
+            >
               Mais de 20 anos
               <br />
               construindo <span className="text-gold-gradient">legados</span>
               <br />e protegendo direitos
-            </h1>
+            </motion.h1>
 
-            <p className="mb-12 max-w-[32rem] text-[0.98rem] font-light leading-[1.8] text-[#a09880]">
+            <motion.p
+              className="mb-12 max-w-[32rem] text-[0.98rem] font-light leading-[1.8] text-[#a09880]"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.3, ease: "easeOut" }}
+            >
               Conheça nossa história, valores e o compromisso com cada cliente
               que confia em nosso trabalho.
-            </p>
+            </motion.p>
 
-            <div className="space-y-2 bg-[var(--glass)] border border-[var(--glass-border)] p-6 inline-block md:w-[60%] backdrop-blur-[6px] transition hover:-translate-y-1 hover:border-[rgba(201,168,76,0.25)]">
+            <motion.div
+              className="space-y-2 bg-[var(--glass)] border border-[var(--glass-border)] p-6 inline-block md:w-[60%] backdrop-blur-[6px] transition hover:-translate-y-1 hover:border-[rgba(201,168,76,0.25)]"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.45, ease: "easeOut" }}
+            >
               <div className="font-sans text-[2.4rem] font-black leading-none text-[#c9a84c]">
                 2006
               </div>
@@ -128,7 +149,7 @@ const Sobre = () => {
                 </strong>
                 Cabanga, Recife - com atuação em todo o Brasil
               </div>
-            </div>
+            </motion.div>
           </div>
 
           <div className="relative hidden overflow-hidden lg:block">
@@ -159,8 +180,12 @@ const Sobre = () => {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
             {stats.map((item, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.13 }}
                 className="relative overflow-hidden text-center px-6 py-10 sm:px-8 sm:py-11 border-r border-[rgba(201,168,76,0.06)] last:border-r-0 transition duration-30 hover:bg-[rgba(107,31,42,0.06) after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-px after:bg-[var(--gold)] after:opacity-50 after:transition-all after:duration-300 hover:after:w-[60%]"
               >
                 <div className="absolute inset-x-0 bottom-0 mx-auto h-px w-0 bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent transition-all duration-300 group-hover:w-[80%]" />
@@ -173,7 +198,7 @@ const Sobre = () => {
                 <div className="mt-1.5 text-[0.78rem] leading-[1.4] text-[#a09880]">
                   {item.sub}
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -184,7 +209,12 @@ const Sobre = () => {
             className="relative z-10 bg-wine px-6 sm:px-8 lg:px-[6%]"
           >
             <div className="grid items-start gap-16 lg:grid-cols-2 lg:gap-20">
-              <div className="reveal-left">
+              <motion.div
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut" }}
+              >
                 <h2 className="mb-4 text-[clamp(1.9rem,3.5vw,2.8rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
                   Uma história construída
                   <br />
@@ -225,16 +255,25 @@ const Sobre = () => {
                     </small>
                   </blockquote>
                 </div>
-              </div>
-              <div className="reveal-right">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7, ease: "easeOut", delay: 0.1 }}
+              >
                 <div className="mb-4 flex items-center gap-3 text-[0.7rem] uppercase tracking-[4px] text-[#c9a84c]">
                   <span className="h-px w-7 bg-[#c9a84c]" />
                   Linha do Tempo
                 </div>
                 <div className="flex flex-col">
                   {timeline.map((item, index) => (
-                    <div
+                    <motion.div
                       key={index}
+                      initial={{ opacity: 0, y: 16 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.45, delay: index * 0.1 }}
                       className="relative grid grid-cols-[80px_1fr] gap-6 last:pb-0"
                     >
                       {index < timeline.length - 1 && (
@@ -254,17 +293,23 @@ const Sobre = () => {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </section>
           <section
             id="trust"
             className="relative z-10 bg-wine px-6 sm:px-8 lg:px-[6%]"
           >
-            <div className="mx-auto mb-16 max-w-2xl text-center">
+            <motion.div
+              className="mx-auto mb-16 max-w-2xl text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.55 }}
+            >
               <h2 className="text-[clamp(1.9rem,3.5vw,2.8rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
                 Os pilares que sustentam
                 <br />
@@ -274,11 +319,15 @@ const Sobre = () => {
                 Cada decisão que tomamos é guiada por valores que colocam o
                 cliente acima de tudo.
               </p>
-            </div>
+            </motion.div>
             <div className="grid gap-6 xl:grid-cols-3">
-              {trustCards.slice(0, 3).map((card) => (
-                <article
+              {trustCards.slice(0, 3).map((card, i) => (
+                <motion.article
                   key={card.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="group relative overflow-hidden border border-[rgba(201,168,76,0.15)] bg-[rgba(255,255,255,0.035)] p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(201,168,76,0.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
                 >
                   <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.08)] text-[1.4rem]">
@@ -291,13 +340,17 @@ const Sobre = () => {
                     {card.text}
                   </p>
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent opacity-30" />
-                </article>
+                </motion.article>
               ))}
             </div>
             <div className="mt-6 grid gap-6 lg:grid-cols-2">
-              {trustCards.slice(3).map((card) => (
-                <article
+              {trustCards.slice(3).map((card, i) => (
+                <motion.article
                   key={card.title}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.12 }}
                   className="group relative overflow-hidden border border-[rgba(201,168,76,0.15)] bg-[rgba(255,255,255,0.035)] p-8 backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 hover:border-[rgba(201,168,76,0.3)] hover:shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
                 >
                   <div className="mb-6 flex h-[52px] w-[52px] items-center justify-center border border-[rgba(201,168,76,0.15)] bg-[rgba(201,168,76,0.08)] text-[1.4rem]">
@@ -310,7 +363,7 @@ const Sobre = () => {
                     {card.text}
                   </p>
                   <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#c9a84c] to-transparent opacity-30" />
-                </article>
+                </motion.article>
               ))}
             </div>
           </section>
@@ -323,7 +376,13 @@ const Sobre = () => {
           <div className="relative mx-auto max-w-3xl">
             <div className="pointer-events-none absolute inset-[-80px] bg-[radial-gradient(ellipse,rgba(201,168,76,0.06),transparent_70%)]" />
 
-            <div className="relative">
+            <motion.div
+              className="relative"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65 }}
+            >
               <h2 className="mb-5 text-[clamp(2rem,4vw,3rem)] font-bold font-heading leading-[1.2] tracking-[-0.02em] text-[#f0ece0]">
                 Pronto para ter um
                 <br />
@@ -345,7 +404,7 @@ const Sobre = () => {
                 ✦ Retorno garantido em até 2 horas úteis &nbsp;·&nbsp;
                 Atendimento presencial ou online
               </p>
-            </div>
+            </motion.div>
           </div>
         </section>
       </section>

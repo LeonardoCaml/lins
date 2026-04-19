@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import WaIcon from "@/components/ui/WaIcon";
 import "@/styles/testimonials.css";
 
@@ -128,8 +129,14 @@ const Stars = ({ rating }: { rating: number }) => (
   </div>
 );
 
-const TestCard = ({ t }: any) => (
-  <div className="break-inside-avoid bg-[var(--glass)] border border-[var(--glass-border)] p-6 mb-5 inline-block w-full backdrop-blur-[6px] transition hover:-translate-y-1 hover:border-[rgba(201,168,76,0.25)]">
+const TestCard = ({ t, index = 0 }: { t: any; index?: number }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.45, delay: (index % 3) * 0.09 }}
+    className="break-inside-avoid bg-[var(--glass)] border border-[var(--glass-border)] p-6 mb-5 inline-block w-full backdrop-blur-[6px] transition hover:-translate-y-1 hover:border-[rgba(201,168,76,0.25)]"
+  >
     <div className="flex justify-between mb-4">
       <Stars rating={t.rating} />
       <span className="text-[0.65rem] uppercase tracking-[1.5px] text-[var(--gold-dim)] border border-[rgba(201,168,76,0.12)] px-2 py-[2px]">
@@ -153,7 +160,7 @@ const TestCard = ({ t }: any) => (
         </div>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 const Depoimentos = () => {
@@ -169,17 +176,31 @@ const Depoimentos = () => {
           <div className="hero-arc arc2"></div>
           <div className="hero-arc arc3"></div>
 
-          <div className="hero-content reveal">
-            <div className="section-label">Prova Social</div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
+          <div className="hero-content">
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               Resultados &<br />
               <span className="text-gold-gradient">Depoimentos</span>
-            </h1>
-            <p className="hero-sub">
+            </motion.h1>
+            <motion.p
+              className="hero-sub"
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.18, ease: "easeOut" }}
+            >
               Histórias reais de clientes que confiaram em nosso trabalho
               <br />e conquistaram seus direitos.
-            </p>
-            <div className=" inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.18)] px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-md text-center">
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.35, ease: "easeOut" }}
+              className=" inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-[rgba(201,168,76,0.05)] border border-[rgba(201,168,76,0.18)] px-4 sm:px-6 py-2 sm:py-3 backdrop-blur-md text-center"
+            >
               <div className="flex gap-[2px] sm:gap-[3px]">
                 <span className="text-[0.85rem] sm:text-[1rem] text-[var(--gold)]">
                   ★
@@ -202,24 +223,42 @@ const Depoimentos = () => {
                 <span className="w-[6px] h-[6px] sm:w-[8px] sm:h-[8px] bg-[#4caf50] rounded-full shadow-[0_0_6px_rgba(76,175,80,0.5)]" />
                 Avaliações verificadas
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
         <div id="stats">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stats-inner reveal">
-            <div className="stat-item reveal">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5 stats-inner">
+            <motion.div
+              className="stat-item"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+            >
               <div className="stat-n">12+</div>
               <div className="stat-l">Avaliações 5 Estrelas</div>
-            </div>
-            <div className="stat-item reveal">
+            </motion.div>
+            <motion.div
+              className="stat-item"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.13 }}
+            >
               <div className="stat-n">98%</div>
               <div className="stat-l">Taxa de Êxito</div>
-            </div>
-            <div className="stat-item reveal">
+            </motion.div>
+            <motion.div
+              className="stat-item"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.26 }}
+            >
               <div className="stat-n">20+</div>
               <div className="stat-l">Anos de Atuação</div>
-            </div>
+            </motion.div>
           </div>
         </div>
 
@@ -234,8 +273,13 @@ const Depoimentos = () => {
         </div>
 
         <section className="bg-[linear-gradient(var(--dark)_40%,#6d222c_100%)] px-[6%] py-20">
-          <div className="test-header reveal">
-            <div className="section-label">O que dizem sobre nós</div>
+          <motion.div
+            className="test-header"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+          >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
               Vozes de quem
               <br />
@@ -248,18 +292,23 @@ const Depoimentos = () => {
               Cada depoimento representa um caso real, uma vida transformada e
               um direito garantido com comprometimento e estratégia.
             </p>
-          </div>
+          </motion.div>
 
           <div className="columns-1 sm:columns-2 lg:columns-3 gap-5">
             {testimonials.map((t, i) => (
-              <TestCard key={i} t={t} />
+              <TestCard key={i} t={t} index={i} />
             ))}
           </div>
         </section>
 
         <section id="cta" className="py-16">
-          <div className="container cta-inner reveal">
-            <div className="section-label">Próximo passo</div>
+          <motion.div
+            className="container cta-inner"
+            initial={{ opacity: 0, y: 28 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.65 }}
+          >
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6">
               Faça parte das nossas
               <br />
@@ -282,7 +331,7 @@ const Depoimentos = () => {
               ✦ Resposta em até 2 horas úteis &nbsp;·&nbsp; Atendimento
               presencial ou online
             </p>
-          </div>
+          </motion.div>
         </section>
       </div>
     </>
