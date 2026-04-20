@@ -34,11 +34,11 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground leading-tight mb-6"
+              className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-primary-foreground mb-6"
             >
-              Consultoria em Previdência Social com{" "}
-              <span className="text-gold-gradient">Foco no INSS</span> e
-              Atendimento Personalizado
+              Escritório especializado em{" "}
+              <span className="text-gold-gradient">direito previdenciário</span>{" "}
+              com foco em Atendimento humanizado
             </motion.h1>
             <motion.p
               initial={{ opacity: 0, y: 30 }}
