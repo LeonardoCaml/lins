@@ -3,7 +3,7 @@ import { MapPin, Phone, Mail, Instagram, Clock } from "lucide-react";
 import logo from "@/assets/logo.png";
 import badge from "@/assets/badge.jpeg";
 
-const WHATSAPP_LINK = "https://wa.me/5581999279799";
+const WHATSAPP_LINK = "https://wa.me/558199279799";
 
 export const Footer = () => {
   return (

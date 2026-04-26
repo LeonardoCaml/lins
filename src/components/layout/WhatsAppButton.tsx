@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import WaIcon from "../ui/WaIcon";
 
 const WHATSAPP_LINK =
-  "https://wa.me/5581999999999?text=Olá! Gostaria de agendar uma consulta.";
+  "https://wa.me/558199279799?text=Olá! Gostaria de agendar uma consulta.";
 
 export const WhatsAppButton = () => {
   return (

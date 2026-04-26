@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 const WHATSAPP_LINK =
-  "https://wa.me/5581999279799?text=Olá! Gostaria de agendar uma consulta.";
+  "https://wa.me/558199279799?text=Olá! Gostaria de agendar uma consulta.";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
