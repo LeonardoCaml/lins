@@ -237,7 +237,7 @@ const AreasDeAtuacao = () => {
               orientar você sobre o melhor caminho para sua situação.
             </p>
             <a
-              href={WHATSAPP_LINK + "meu caso"}
+              href="https://wa.me/558199279799?text=Olá! Vim pelo site da Lins Advogados e quero saber se tenho direito a algum benefício do INSS."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary max-w-lg w-full flex items-center justify-center gap-2 py-[18px] px-8"

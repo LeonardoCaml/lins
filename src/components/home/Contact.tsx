@@ -16,7 +16,7 @@ const ContactSection = () => {
         </p>
         <div className="mt-8 flex flex-col items-center gap-4">
           <a
-            href="https://wa.me/5581999279799?text=Olá,%20quero%20falar%20sobre%20meu%20caso."
+            href="https://wa.me/558199279799?text=Olá! Vim pelo site da Lins Advogados e quero saber se tenho direito a algum benefício do INSS."
             target="_blank"
             rel="noopener noreferrer"
             className="btn-primary w-full sm:w-auto px-8 py-5 text-base sm:text-lg"

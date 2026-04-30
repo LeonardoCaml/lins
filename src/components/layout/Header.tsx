@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 const WHATSAPP_LINK =
-  "https://wa.me/558199279799?text=Olá! Gostaria de agendar uma consulta.";
+  "https://wa.me/558199279799?text=Olá! Vim pelo site da Lins Advogados e quero saber se tenho direito a algum benefício do INSS.";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
