@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import WaIcon from "../ui/WaIcon";
 
 const WHATSAPP_LINK =
-  "https://wa.me/558199279799?text=Olá! Vim pelo site da Lins Advogados e quero saber se tenho direito a algum benefício do INSS.";
+  "https://wa.me/558196761408?text=Olá! Vim pelo site da Lins Advogados e quero saber se tenho direito a algum benefício do INSS.";
 
 export const WhatsAppButton = () => {
   return (

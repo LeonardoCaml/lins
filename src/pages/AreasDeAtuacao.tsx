@@ -12,7 +12,7 @@ import {
 import WaIcon from "@/components/ui/WaIcon";
 
 const WHATSAPP_LINK =
-  "https://wa.me/558199279799?text=Olá! Gostaria de saber mais sobre ";
+  "https://wa.me/558196761408?text=Olá! Gostaria de saber mais sobre ";
 
 const services = [
   {
